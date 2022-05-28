@@ -1,7 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ScappleDocument Version="1.2" ID="A4CBE163-3AD3-4768-90E8-2BC4D3BDB18B">
-  <Notes/>
+  <Notes>
+    <Note ID="0" FontSize="100.0" Position="1009.0,529.0" Width="276.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Web3</String>
+    </Note>
+    <Note ID="1" FontSize="12.0" Position="440.0,323.0" Width="54.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Solana</String>
+    </Note>
+    <Note ID="2" FontSize="12.0" Position="514.0,444.0" Width="68.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Substrate</String>
+    </Note>
+    <Note ID="3" FontSize="12.0" Position="461.0,620.0" Width="178.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+        <TextColor>0.0 0.0 0.0</TextColor>
+      </Appearance>
+      <String>ZKP:  zero-knowledge proof/protocol</String>
+      <Formatting>
+        <FormatRange Link="https://zh.wikipedia.org/zh-hans/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E">6,29</FormatRange>
+      </Formatting>
+    </Note>
+    <Note ID="4" FontSize="12.0" Position="263.0,531.0" Width="42.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>DeFi</String>
+    </Note>
+    <Note ID="5" FontSize="12.0" Position="227.0,773.0" Width="43.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>DAO</String>
+    </Note>
+    <Note ID="6" FontSize="12.0" Position="494.0,832.0" Width="55.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Solidity</String>
+    </Note>
+    <Note ID="7" FontSize="12.0" Position="654.0,829.0" Width="42.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Vper</String>
+    </Note>
+    <Note ID="8" FontSize="12.0" Position="955.0,820.0" Width="72.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>metamask</String>
+    </Note>
+    <Note ID="9" FontSize="12.0" Position="935.0,945.0" Width="89.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>walletconnect</String>
+    </Note>
+    <Note ID="10" FontSize="12.0" Position="1169.0,900.0" Width="43.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>EVM</String>
+    </Note>
+    <Note ID="11" FontSize="12.0" Position="674.0,950.0" Width="40.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>NFT</String>
+    </Note>
+    <Note ID="12" FontSize="12.0" Position="882.0,202.0" Width="69.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Ethereum</String>
+    </Note>
+    <Note ID="13" FontSize="12.0" Position="882.0,230.0" Width="42.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>EOS</String>
+    </Note>
+    <Note ID="14" FontSize="12.0" Position="882.0,258.0" Width="53.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Bitcoin</String>
+    </Note>
+    <Note ID="15" FontSize="12.0" Position="882.0,286.0" Width="63.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Polkadot</String>
+    </Note>
+    <Note ID="16" FontSize="12.0" Position="882.0,314.0" Width="61.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Cosmos</String>
+    </Note>
+    <Note ID="17" FontSize="12.0" Position="882.0,342.0" Width="166.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+        <TextColor>0.0 0.0 0.0</TextColor>
+      </Appearance>
+      <String>Inter-Blockchain Technology</String>
+      <ConnectedNoteIDs>19</ConnectedNoteIDs>
+    </Note>
+    <Note ID="18" FontSize="12.0" Position="505.0,500.0" Width="64.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Cumulus</String>
+    </Note>
+    <Note ID="19" FontSize="12.0" Position="1162.4,320.1" Width="51.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>XCMP</String>
+      <ConnectedNoteIDs>17</ConnectedNoteIDs>
+    </Note>
+    <Note ID="20" FontSize="12.0" Position="679.0,463.0" Width="47.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Parity</String>
+    </Note>
+    <Note ID="21" FontSize="12.0" Position="894.0,423.0" Width="69.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>parachain</String>
+    </Note>
+    <Note ID="22" FontSize="12.0" Position="1057.0,458.0" Width="82.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Relay Chain</String>
+    </Note>
+    <Note ID="23" FontSize="12.0" Position="1320.0,378.0" Width="39.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>PoS</String>
+    </Note>
+    <Note ID="24" FontSize="12.0" Position="1441.0,563.0" Width="37.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Eos</String>
+    </Note>
+    <Note ID="25" FontSize="12.0" Position="1441.0,591.0" Width="61.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Cosmos</String>
+    </Note>
+    <Note ID="26" FontSize="12.0" Position="1441.0,619.0" Width="63.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>DFINITY</String>
+    </Note>
+    <Note ID="27" FontSize="12.0" Position="1283.0,715.0" Width="58.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>zkrollup</String>
+    </Note>
+    <Note ID="28" FontSize="12.0" Position="1283.0,743.0" Width="51.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Eth2.0</String>
+    </Note>
+    <Note ID="29" FontSize="12.0" Position="1283.0,771.0" Width="117.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Privacy Computing</String>
+    </Note>
+    <Note ID="30" FontSize="12.0" Position="600.0,204.0" Width="93.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>WebAssembly</String>
+    </Note>
+    <Note ID="31" FontSize="12.0" Position="1557.5,967.7" Width="55.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Nervos</String>
+      <ConnectedNoteIDs>32-33</ConnectedNoteIDs>
+    </Note>
+    <Note ID="32" FontSize="12.0" Position="1695.5,922.7" Width="41.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>CKB</String>
+      <ConnectedNoteIDs>31</ConnectedNoteIDs>
+    </Note>
+    <Note ID="33" FontSize="12.0" Position="1765.1,1029.6" Width="550.3">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>The Nervos Network is a layered blockchain network for tomorrow’s crypto economy. CKB (https://github.com/nervosnetwork/ckb) is the layer 1 of Nervos Network, a public permissionless blockchain. CKB uses Proof of Work (https://en.wikipedia.org/wiki/Proof-of-work_system) and improved Nakamoto consensus (https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832) to achieve maximized performance on average hardware and internet condition, without sacrificing decentralization and security which are the core value of blockchain. CKB supports scripting in any programming language with its own CKB-VM (https://github.com/nervosnetwork/ckb-vm/), a virtual machine fully compatible with RISC-V ISA. CKB is a General Verification Network (https://medium.com/nervosnetwork/https-medium-com-nervosnetwork-cell-model-7323fca57571), its programming model focuses on state verification, leaves state generation to layer 2 applications/protocols.
+
+The Nervos CKB mainnet launched in 2019. It’s processing thousands of transactions and keeping assets worth hundreds of millions secure every day. We are working hard to make it better, focusing mainly on two directions. The first is to optimize the Rust implementation, make it more secure, running more faster and more friendly to use. The second is to evolve the protocol to extend the system capabilities. If you love solving challenging problems, system programming, Rust, enjoy learning, want to make the world better with your talents, and believe in blockchain, please join us to invent the new internet of trust and value.
+</String>
+      <ConnectedNoteIDs>31</ConnectedNoteIDs>
+    </Note>
+    <Note ID="34" FontSize="12.0" Position="1594.0,669.0" Width="53.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Layer2</String>
+    </Note>
+  </Notes>
   <BackgroundShapes/>
+  <Stacks>
+    <Stack>12-17</Stack>
+    <Stack>24-26</Stack>
+    <Stack>27-29</Stack>
+  </Stacks>
+  <AutoFit>0-32, 34</AutoFit>
   <NoteStyles>
     <Style Name="Bubble (Blue)" ID="F9DA541D-A8D7-4834-9EFD-1288955DC550" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
       <BorderThickness>1</BorderThickness>
