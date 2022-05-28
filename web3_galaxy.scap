@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScappleDocument Version="1.2" ID="A4CBE163-3AD3-4768-90E8-2BC4D3BDB18B">
+  <Notes/>
+  <BackgroundShapes/>
+  <NoteStyles>
+    <Style Name="Bubble (Blue)" ID="F9DA541D-A8D7-4834-9EFD-1288955DC550" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+      <BorderThickness>1</BorderThickness>
+      <BorderColor>0.668962 0.810287 0.895092</BorderColor>
+      <FillColor>0.743291 0.900319 0.994547</FillColor>
+    </Style>
+    <Style Name="Bubble (Green)" ID="430FD889-9BAA-4C3C-978D-46784B1813B1" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+      <BorderThickness>1</BorderThickness>
+      <BorderColor>0.669404 0.885265 0.567007</BorderColor>
+      <FillColor>0.743783 0.983628 0.630008</FillColor>
+    </Style>
+    <Style Name="Bubble (Pink)" ID="6518F6A7-A866-4562-B27D-01B2796E3510" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+      <BorderThickness>1</BorderThickness>
+      <BorderColor>0.894547 0.707772 0.715904</BorderColor>
+      <FillColor>0.989115 0.814114 0.999483</FillColor>
+    </Style>
+    <Style Name="Bubble (Red)" ID="A6E46B3D-6EC3-4267-BDA7-554B7F7EFC68" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+      <BorderThickness>1</BorderThickness>
+      <BorderColor>0.894547 0.707772 0.715904</BorderColor>
+      <FillColor>0.993942 0.786413 0.795449</FillColor>
+    </Style>
+    <Style Name="Bubble (Yellow)" ID="DCE55BB7-97BA-4408-845E-6A15C1035941" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+      <BorderThickness>1</BorderThickness>
+      <BorderColor>0.877748 0.828289 0.562126</BorderColor>
+      <FillColor>0.975275 0.920321 0.624585</FillColor>
+    </Style>
+    <Style Name="Red Text" ID="6096A5E0-A8E6-423A-AE5E-FCDF4C47F187" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="Yes" AffectNoteBody="No" AffectFade="No">
+      <TextColor>0.985954 0.0 0.02694</TextColor>
+    </Style>
+    <Style Name="Title Text" ID="7183EA9B-CA53-43A8-AF2B-DBBA1CF00010" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="No" AffectNoteBody="No" AffectFade="No">
+      <FontSize>28.0</FontSize>
+      <IsBold>Yes</IsBold>
+    </Style>
+  </NoteStyles>
+  <UISettings>
+    <BackgroundColor>0.999763 0.988395 0.949915</BackgroundColor>
+    <DefaultFont>Helvetica</DefaultFont>
+    <NoteXPadding>8.0</NoteXPadding>
+  </UISettings>
+  <PrintSettings PaperSize="595.0,842.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="iso-a4" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"/>
+</ScappleDocument>
