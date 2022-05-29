@@ -18,6 +18,9 @@
         <Alignment>Left</Alignment>
       </Appearance>
       <String>Substrate</String>
+      <Formatting>
+        <FormatRange Link="https://substrate.io/">0,9</FormatRange>
+      </Formatting>
     </Note>
     <Note ID="3" FontSize="12.0" Position="461.0,620.0" Width="178.0">
       <Appearance>
@@ -151,6 +154,7 @@
         <Alignment>Left</Alignment>
       </Appearance>
       <String>PoS</String>
+      <ConnectedNoteIDs>40</ConnectedNoteIDs>
     </Note>
     <Note ID="24" FontSize="12.0" Position="1441.0,563.0" Width="37.0">
       <Appearance>
@@ -194,21 +198,21 @@
       </Appearance>
       <String>WebAssembly</String>
     </Note>
-    <Note ID="31" FontSize="12.0" Position="1557.5,967.7" Width="55.0">
+    <Note ID="31" FontSize="12.0" Position="1838.6,1338.0" Width="55.0">
       <Appearance>
         <Alignment>Left</Alignment>
       </Appearance>
       <String>Nervos</String>
       <ConnectedNoteIDs>32-33</ConnectedNoteIDs>
     </Note>
-    <Note ID="32" FontSize="12.0" Position="1695.5,922.7" Width="41.0">
+    <Note ID="32" FontSize="12.0" Position="1976.6,1293.0" Width="41.0">
       <Appearance>
         <Alignment>Left</Alignment>
       </Appearance>
       <String>CKB</String>
       <ConnectedNoteIDs>31</ConnectedNoteIDs>
     </Note>
-    <Note ID="33" FontSize="12.0" Position="1765.1,1029.6" Width="550.3">
+    <Note ID="33" FontSize="12.0" Position="2046.3,1399.9" Width="550.3">
       <Appearance>
         <Alignment>Left</Alignment>
       </Appearance>
@@ -224,14 +228,319 @@ The Nervos CKB mainnet launched in 2019. It’s processing thousands of transact
       </Appearance>
       <String>Layer2</String>
     </Note>
+    <Note ID="36" FontSize="12.0" Position="1320.0,406.0" Width="48.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>DPoS</String>
+      <ConnectedNoteIDs>40</ConnectedNoteIDs>
+    </Note>
+    <Note ID="37" FontSize="12.0" Position="1320.0,434.0" Width="47.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>PBFT</String>
+      <ConnectedNoteIDs>40</ConnectedNoteIDs>
+    </Note>
+    <Note ID="38" FontSize="12.0" Position="1320.0,462.0" Width="50.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Paxos</String>
+      <ConnectedNoteIDs>40</ConnectedNoteIDs>
+    </Note>
+    <Note ID="39" FontSize="12.0" Position="1320.0,490.0" Width="39.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Raft</String>
+      <ConnectedNoteIDs>40</ConnectedNoteIDs>
+    </Note>
+    <Note ID="40" FontSize="12.0" Position="1189.6,420.8" Width="74.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>consensus</String>
+      <ConnectedNoteIDs>23, 36-39</ConnectedNoteIDs>
+      <Formatting>
+        <FormatRange Link="https://zh.m.wikipedia.org/zh-hans/%E5%85%B1%E8%AD%98%E6%A9%9F%E5%88%B6">0,9</FormatRange>
+      </Formatting>
+    </Note>
+    <Note ID="41" FontSize="12.0" Position="522.0,389.0" Width="50.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Truffle</String>
+    </Note>
+    <Note ID="42" FontSize="12.0" Position="385.0,402.0" Width="84.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Opensepplin</String>
+    </Note>
+    <Note ID="43" FontSize="12.0" Position="774.0,735.0" Width="76.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Tendermint</String>
+    </Note>
+    <Note ID="44" FontSize="12.0" Position="1324.0,863.0" Width="65.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Sharding</String>
+    </Note>
+    <Note ID="45" FontSize="12.0" Position="1639.0,91.0" Width="179.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>AQB: adaptive quorum biasing</String>
+    </Note>
+    <Note ID="47" FontSize="12.0" Position="1639.0,119.0" Width="80.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>aggregation</String>
+    </Note>
+    <Note ID="48" FontSize="12.0" Position="1639.0,147.0" Width="98.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>approval voting</String>
+    </Note>
+    <Note ID="49" FontSize="12.0" Position="1639.0,175.0" Width="129.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Aura: authority round</String>
+    </Note>
+    <Note ID="50" FontSize="12.0" Position="1639.0,203.0" Width="200.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>BABE: blind assignment of blockchain extension</String>
+    </Note>
+    <Note ID="51" FontSize="12.0" Position="1639.0,245.0" Width="175.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>BFT: byzantine fault tolerance</String>
+    </Note>
+    <Note ID="52" FontSize="12.0" Position="1639.0,273.0" Width="104.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>byzantine failure</String>
+    </Note>
+    <Note ID="53" FontSize="12.0" Position="1639.0,301.0" Width="143.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>cryptographic primitives</String>
+    </Note>
+    <Note ID="54" FontSize="12.0" Position="1639.0,329.0" Width="54.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>council</String>
+    </Note>
+    <Note ID="55" FontSize="12.0" Position="1639.0,357.0" Width="49.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>digest</String>
+    </Note>
+    <Note ID="56" FontSize="12.0" Position="1639.0,385.0" Width="84.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>equivocating</String>
+    </Note>
+    <Note ID="57" FontSize="12.0" Position="1639.0,413.0" Width="53.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>ethash</String>
+    </Note>
+    <Note ID="58" FontSize="12.0" Position="1639.0,441.0" Width="61.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>extrinsic</String>
+    </Note>
+    <Note ID="59" FontSize="12.0" Position="1639.0,469.0" Width="112.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>existential deposit</String>
+    </Note>
+    <Note ID="60" FontSize="12.0" Position="1639.0,497.0" Width="55.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>fanality</String>
+    </Note>
+    <Note ID="61" FontSize="12.0" Position="1639.0,525.0" Width="69.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>flaming fir</String>
+    </Note>
+    <Note ID="62" FontSize="12.0" Position="1639.0,553.0" Width="63.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>full client</String>
+    </Note>
+    <Note ID="63" FontSize="12.0" Position="1639.0,581.0" Width="130.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>genesis configuration</String>
+    </Note>
+    <Note ID="64" FontSize="12.0" Position="1639.0,609.0" Width="110.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>hybrid consensus</String>
+    </Note>
+    <Note ID="65" FontSize="12.0" Position="1639.0,637.0" Width="61.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Kusama</String>
+    </Note>
+    <Note ID="66" FontSize="12.0" Position="1639.0,665.0" Width="49.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>libp2p</String>
+    </Note>
+    <Note ID="67" FontSize="12.0" Position="1639.0,693.0" Width="70.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>light client</String>
+    </Note>
+    <Note ID="68" FontSize="12.0" Position="1639.0,721.0" Width="63.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>full client</String>
+    </Note>
+    <Note ID="69" FontSize="12.0" Position="1639.0,749.0" Width="150.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>NPoS:
+nominated proof-of-stake</String>
+    </Note>
+    <Note ID="70" FontSize="12.0" Position="1639.0,791.0" Width="45.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>pallet</String>
+    </Note>
+    <Note ID="71" FontSize="12.0" Position="1639.0,819.0" Width="109.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Polkadot network</String>
+    </Note>
+    <Note ID="72" FontSize="12.0" Position="1639.0,847.0" Width="96.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>proof-of-finality</String>
+    </Note>
+    <Note ID="73" FontSize="12.0" Position="1639.0,875.0" Width="96.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>proof-of-finality</String>
+    </Note>
+    <Note ID="74" FontSize="12.0" Position="1639.0,903.0" Width="83.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>proof-ofwork</String>
+    </Note>
+    <Note ID="75" FontSize="12.0" Position="1639.0,931.0" Width="75.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>relay chain</String>
+    </Note>
+    <Note ID="76" FontSize="12.0" Position="1639.0,959.0" Width="91.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>rhododendron</String>
+    </Note>
+    <Note ID="77" FontSize="12.0" Position="1639.0,987.0" Width="53.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>rococo</String>
+    </Note>
+    <Note ID="78" FontSize="12.0" Position="1639.0,1015.0" Width="35.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>slot</String>
+    </Note>
+    <Note ID="79" FontSize="12.0" Position="1639.0,1043.0" Width="133.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>stake-weighted voting</String>
+    </Note>
+    <Note ID="80" FontSize="12.0" Position="1639.0,1071.0" Width="43.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>state</String>
+    </Note>
+    <Note ID="81" FontSize="12.0" Position="1639.0,1099.0" Width="175.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>STF: state transistion function</String>
+    </Note>
+    <Note ID="82" FontSize="12.0" Position="1639.0,1127.0" Width="83.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>storage item</String>
+    </Note>
+    <Note ID="83" FontSize="12.0" Position="1639.0,1155.0" Width="148.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>trie(Patricia Merkle Tree)</String>
+    </Note>
+    <Note ID="84" FontSize="12.0" Position="1639.0,1183.0" Width="62.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>validator</String>
+    </Note>
+    <Note ID="85" FontSize="12.0" Position="1639.0,1211.0" Width="70.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Westened</String>
+    </Note>
   </Notes>
   <BackgroundShapes/>
   <Stacks>
     <Stack>12-17</Stack>
+    <Stack>23, 36-39</Stack>
     <Stack>24-26</Stack>
     <Stack>27-29</Stack>
+    <Stack>45, 47-85</Stack>
   </Stacks>
-  <AutoFit>0-32, 34</AutoFit>
+  <AutoFit>0-32, 34, 36-45, 47-49, 51-85</AutoFit>
   <NoteStyles>
     <Style Name="Bubble (Blue)" ID="F9DA541D-A8D7-4834-9EFD-1288955DC550" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
       <BorderThickness>1</BorderThickness>
