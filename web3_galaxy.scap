@@ -198,35 +198,54 @@
       </Appearance>
       <String>WebAssembly</String>
     </Note>
-    <Note ID="31" FontSize="12.0" Position="1838.6,1338.0" Width="55.0">
+    <Note ID="31" FontSize="12.0" Position="1839.0,1338.0" Width="55.0">
       <Appearance>
         <Alignment>Left</Alignment>
       </Appearance>
       <String>Nervos</String>
       <ConnectedNoteIDs>32-33</ConnectedNoteIDs>
+      <Formatting>
+        <FormatRange Link="https://www.nervos.org/">0,6</FormatRange>
+      </Formatting>
     </Note>
-    <Note ID="32" FontSize="12.0" Position="1976.6,1293.0" Width="41.0">
+    <Note ID="32" FontSize="12.0" Position="1977.0,1293.0" Width="41.0">
       <Appearance>
         <Alignment>Left</Alignment>
       </Appearance>
       <String>CKB</String>
-      <ConnectedNoteIDs>31</ConnectedNoteIDs>
+      <ConnectedNoteIDs>31, 88</ConnectedNoteIDs>
+      <Formatting>
+        <FormatRange Link="https://github.com/nervosnetwork/ckb">0,3</FormatRange>
+      </Formatting>
     </Note>
-    <Note ID="33" FontSize="12.0" Position="2046.3,1399.9" Width="550.3">
+    <Note ID="33" FontSize="12.0" Position="2046.0,1400.0" Width="551.0">
       <Appearance>
         <Alignment>Left</Alignment>
       </Appearance>
-      <String>The Nervos Network is a layered blockchain network for tomorrow’s crypto economy. CKB (https://github.com/nervosnetwork/ckb) is the layer 1 of Nervos Network, a public permissionless blockchain. CKB uses Proof of Work (https://en.wikipedia.org/wiki/Proof-of-work_system) and improved Nakamoto consensus (https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832) to achieve maximized performance on average hardware and internet condition, without sacrificing decentralization and security which are the core value of blockchain. CKB supports scripting in any programming language with its own CKB-VM (https://github.com/nervosnetwork/ckb-vm/), a virtual machine fully compatible with RISC-V ISA. CKB is a General Verification Network (https://medium.com/nervosnetwork/https-medium-com-nervosnetwork-cell-model-7323fca57571), its programming model focuses on state verification, leaves state generation to layer 2 applications/protocols.
+      <String>
+The Nervos Network is a layered blockchain network for tomorrow’s crypto economy. CKB is the layer 1 of Nervos Network, a public permissionless blockchain. CKB uses Proof of Work and improved Nakamoto consensus to achieve maximized performance on average hardware and internet condition, without sacrificing decentralization and security which are the core value of blockchain. CKB supports scripting in any programming language with its own CKB-VM, a virtual machine fully compatible with RISC-V ISA. CKB is a General Verification Network, its programming model focuses on state verification, leaves state generation to layer 2 applications/protocols.
 
-The Nervos CKB mainnet launched in 2019. It’s processing thousands of transactions and keeping assets worth hundreds of millions secure every day. We are working hard to make it better, focusing mainly on two directions. The first is to optimize the Rust implementation, make it more secure, running more faster and more friendly to use. The second is to evolve the protocol to extend the system capabilities. If you love solving challenging problems, system programming, Rust, enjoy learning, want to make the world better with your talents, and believe in blockchain, please join us to invent the new internet of trust and value.
+The Nervos CKB mainnet launched in 2019. It’s processing thousands of transactions and keeping assets worth hundreds of millions secure every day. We are working hard to make it better, focusing mainly on two directions.
+1. The first is to optimize the Rust implementation, make it more secure, running more faster and more friendly to use. 
+2. The second is to evolve the protocol to extend the system capabilities. 
+
+If you love solving challenging problems, system programming, Rust, enjoy learning, want to make the world better with your talents, and believe in blockchain, please join us to invent the new internet of trust and value.
 </String>
       <ConnectedNoteIDs>31</ConnectedNoteIDs>
+      <Formatting>
+        <FormatRange Link="https://github.com/nervosnetwork/ckb">83,3</FormatRange>
+        <FormatRange Link="https://en.wikipedia.org/wiki/Proof-of-work_system">166,13</FormatRange>
+        <FormatRange Link="https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832">202,9</FormatRange>
+        <FormatRange Link="https://github.com/nervosnetwork/ckb-vm/">443,6</FormatRange>
+        <FormatRange Link="https://medium.com/nervosnetwork/https-medium-com-nervosnetwork-cell-model-7323fca57571">512,28</FormatRange>
+      </Formatting>
     </Note>
-    <Note ID="34" FontSize="12.0" Position="1594.0,669.0" Width="53.0">
+    <Note ID="34" FontSize="12.0" Position="931.4,1264.4" Width="53.0">
       <Appearance>
         <Alignment>Left</Alignment>
       </Appearance>
       <String>Layer2</String>
+      <ConnectedNoteIDs>89</ConnectedNoteIDs>
     </Note>
     <Note ID="36" FontSize="12.0" Position="1320.0,406.0" Width="48.0">
       <Appearance>
@@ -531,6 +550,41 @@ nominated proof-of-stake</String>
       </Appearance>
       <String>Westened</String>
     </Note>
+    <Note ID="87" FontSize="12.0" Position="937.4,1040.0" Width="53.0">
+      <Appearance>
+        <Alignment>Left</Alignment>
+      </Appearance>
+      <String>Layer1</String>
+      <ConnectedNoteIDs>89</ConnectedNoteIDs>
+    </Note>
+    <Note ID="88" FontSize="12.0" Position="2131.8,1149.1" Width="282.6">
+      <Appearance>
+        <Alignment>Left</Alignment>
+        <TextColor>0.0 0.0 0.0</TextColor>
+      </Appearance>
+      <String>CKV-VM:
+CKB VM is a pure software implementation of the RISC-V instruction set used as scripting VM in CKB. Right now it implements full IMC instructions for both 32-bit and 64-bit register size support. In the future we might also implement V extensions to enable better crypto implementations.</String>
+      <ConnectedNoteIDs>32</ConnectedNoteIDs>
+      <Formatting>
+        <FormatRange Link="https://github.com/nervosnetwork/ckb-vm/">0,6</FormatRange>
+        <FormatRange Link="https://riscv.org/">56,6</FormatRange>
+      </Formatting>
+    </Note>
+    <Note ID="89" FontSize="12.0" Position="1110.0,1155.0" Width="381.3">
+      <Appearance>
+        <Alignment>Left</Alignment>
+        <TextColor>0.0 0.0 0.0</TextColor>
+      </Appearance>
+      <String>difference: Layer-1 is the term that’s used to describe the underlying main blockchain architecture. 
+Layer-2, on the other hand, is an overlaying network that lies on top of the underlying blockchain.
+
+Consider Bitcoin and Lightning Network: Bitcoin is the layer-1 network, while the lightning network is layer-2. </String>
+      <ConnectedNoteIDs>34, 87</ConnectedNoteIDs>
+      <PointsToNoteIDs>34, 87</PointsToNoteIDs>
+      <Formatting>
+        <FormatRange Link="https://medium.com/the-capital/layer-1-vs-layer-2-what-you-need-to-know-about-different-blockchain-layer-solutions-69f91904ce40">0,10</FormatRange>
+      </Formatting>
+    </Note>
   </Notes>
   <BackgroundShapes/>
   <Stacks>
@@ -540,7 +594,7 @@ nominated proof-of-stake</String>
     <Stack>27-29</Stack>
     <Stack>45, 47-85</Stack>
   </Stacks>
-  <AutoFit>0-32, 34, 36-45, 47-49, 51-85</AutoFit>
+  <AutoFit>0-32, 34, 36-45, 47-49, 51-85, 87</AutoFit>
   <NoteStyles>
     <Style Name="Bubble (Blue)" ID="F9DA541D-A8D7-4834-9EFD-1288955DC550" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
       <BorderThickness>1</BorderThickness>
