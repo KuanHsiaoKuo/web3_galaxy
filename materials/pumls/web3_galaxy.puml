@@ -1,6 +1,12 @@
 @startmindmap
 * WEB3
-**:Layer1:通信层
+**:分层
+<code>
+这里的分层只是为了更好地解剖web3内容，
+其实很多内容会跨几个层。
+比如区块链就跨了前4层
+</code>;
+***:Layer1:通信层
 <code>
 区块链数据安全地存储在数据服务器中。
 当我们浏览网页或使用任何区块链应用程序时，
@@ -14,7 +20,7 @@
 与网络上的另一个设备通信的每个设备都是一个节点。
 每个节点随机验证交易数据。
 </code>;
-**:Layer2:数据层
+***:Layer2:数据层
 <code>
 区块链只不过是一长串包含交易数据的“块”。
 当节点验证一定数量的交易时，数据被捆绑到
@@ -34,7 +40,7 @@
 数字签名还可以保护所有者的身份，
 该身份本身是加密的，从而确保了最大的安全性。
 </code>;
-**:Layer3:网络层
+***:Layer3:网络层
 <code>
 P2P 框架使各个节点能够交换交易数据以就
 交易的有效性达成共识。这意味着每个节点都
@@ -44,7 +50,7 @@ P2P 框架使各个节点能够交换交易数据以就
 由于节点发现、块创建和块添加也由该
 层管理，因此也称为“传播层”。
 </code>;
-**:Layer4:共识层
+***:Layer4:共识层
 <code>
 这是区块链操作中最关键的层。
 这一层负责验证交易，没有它，整个系统都会失败。
@@ -64,7 +70,7 @@ P2P 框架使各个节点能够交换交易数据以就
 
 但是，必须始终存在单个链块添加，并且共识层也确保解决此冲突。
 </code>;
-**:Layer5:应用层
+***:Layer5:应用层(dApp)
 <code>
 这是运行智能合约和去中心化应用程序 (dApp) 的层。
 智能合约根据某些触发因素做出决策，例如合约到期日、
@@ -75,4 +81,8 @@ dApp还促进了用户设备和区块链之间的通信。
 因此，应用程序就像面向用户的前端，而主区块链是后端，
 数据安全地存储在其中。
 </code>;
+** Blockchain
+*** Polkadot [[https://polkadot.network/ 官网]]
+*** Substrate [[https://substrate.io/ 官网]] [[https://docs.substrate.io/?mode=dark doc]] [[https://marketplace.substrate.io/ marketplace]] [[https://kuanhsiaokuo.github.io/programming_anatomy_in_rust/layer5_ecosystem/7_business/blockchain/substrate/substrate_intro.html anatomy]]
+** Dapp
 @endmindmap

@@ -57,7 +57,7 @@ def converter(puml_path: str):
                     node["color"] = '#' + color
                 if index < len(lines) and lines[index + 1].startswith('<code>'):
                     note = notes.pop(0)
-                    # print(f"弹出的注释：{note}")
+                    print(f"弹出的注释：{note}")
                     node['note'] = note
                 json_results.append(node)
                 title_index += 1
@@ -71,9 +71,11 @@ def extract_stars_name_links_color(line=''):
     color = None
     links = re.findall('\[\[(.*?)\]\]', line)
     link_dict = {}
+    # 将链接文字替换掉
     for link in links:
         href, title = link.split(' ', 1)
-        line = line.replace(f"[[{href} {title}]]", f" {title}")
+        # line = line.replace(f"[[{href} {title}]]", f" {title}")
+        line = line.replace(f"[[{href} {title}]]", '')
         link_dict[title] = href
     try:
         stars = re.split('[ :\[]', line)[0]
