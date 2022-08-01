@@ -1,0 +1,52 @@
+[book]
+authors = ["kuanhsiaokuo"]
+description = "关于web3"
+language = "cn"
+multilingual = false
+src = "src"
+title = "Web3 Galaxy 🌌"
+
+[output.html]
+theme = "mytheme"
+default-theme = "rust"
+git-repository-url = "git@github.com:KuanHsiaoKuo/web3_galaxy.git"
+git-repository-icon = "fa-rust"
+additional-js = [
+    "assets/mermaid/mermaid-913.min.js",
+    "assets/mermaid/mermaid-init.js",
+    "assets/smart-anchor.js",
+    "assets/pagetoc/sidebar.js",
+]
+additional-css = ["assets/pagetoc/pagetoc_style.css", "assets/css/mdbook-admonish.css"]
+mathjax-support = true
+
+
+[output.html.playground]
+editable = true
+copy-js = true
+
+[output.html.fold]
+enable = false
+level = 0
+
+# Enables the `mdbook-mermaid` preprocessor
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+# Enables the `mdbook-plantuml` preprocessor
+#[preprocessor.plantuml]
+#command = "mdbook-plantuml"
+
+[preprocessor.puml]
+command = "mdbook-puml"
+
+[preprocessor.kroki-preprocessor]
+
+# Enables the `mdbook-checklist` preprocessor
+[preprocessor.checklist]
+title = "待完善: "
+
+# Enables the `mdbook-admonish` preprocessor
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "2.0.0" # do not edit: managed by `mdbook-admonish install`
