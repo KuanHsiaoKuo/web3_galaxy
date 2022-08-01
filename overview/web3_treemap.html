@@ -14,7 +14,8 @@
     function render(spec) {
         view = new vega.View(vega.parse(spec), {
             // canvas在节点多的时候性能更好，svg的功能性更好
-            renderer: 'canvas',  // renderer (canvas or svg)
+            // 很多节点操作，比如hover需要用svg格式
+            renderer: 'svg',  // renderer (canvas or svg)
             container: '#view',   // parent DOM container
             hover: true       // enable hover processing
         });
