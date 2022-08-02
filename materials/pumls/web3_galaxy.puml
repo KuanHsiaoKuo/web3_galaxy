@@ -6,7 +6,7 @@
 其实很多内容会跨几个层。
 比如区块链就跨了前4层
 </code>;
-***:Layer1:通信层
+***:Layer(s)0:通信层
 <code>
 区块链数据安全地存储在数据服务器中。
 当我们浏览网页或使用任何区块链应用程序时，
@@ -20,7 +20,11 @@
 与网络上的另一个设备通信的每个设备都是一个节点。
 每个节点随机验证交易数据。
 </code>;
-***:Layer2:数据层
+***:Layers I
+<code>
+此处是指第一个范围，区块链就属于这个范围
+</code>;
+****:Layer1:数据层
 <code>
 区块链只不过是一长串包含交易数据的“块”。
 当节点验证一定数量的交易时，数据被捆绑到
@@ -40,7 +44,7 @@
 数字签名还可以保护所有者的身份，
 该身份本身是加密的，从而确保了最大的安全性。
 </code>;
-***:Layer3:网络层
+****:Layer2:网络层
 <code>
 P2P 框架使各个节点能够交换交易数据以就
 交易的有效性达成共识。这意味着每个节点都
@@ -50,7 +54,7 @@ P2P 框架使各个节点能够交换交易数据以就
 由于节点发现、块创建和块添加也由该
 层管理，因此也称为“传播层”。
 </code>;
-***:Layer4:共识层
+****:Layer3:共识层
 <code>
 这是区块链操作中最关键的层。
 这一层负责验证交易，没有它，整个系统都会失败。
@@ -70,7 +74,10 @@ P2P 框架使各个节点能够交换交易数据以就
 
 但是，必须始终存在单个链块添加，并且共识层也确保解决此冲突。
 </code>;
-***:Layer5:应用层(dApp)
+**** Layer4:激励层
+**** Layer5:合约层
+*** Layers II
+****:Layer6:应用层(dApp)
 <code>
 这是运行智能合约和去中心化应用程序 (dApp) 的层。
 智能合约根据某些触发因素做出决策，例如合约到期日、
@@ -82,7 +89,28 @@ dApp还促进了用户设备和区块链之间的通信。
 数据安全地存储在其中。
 </code>;
 ** Blockchain
+*** ETH
+*** Solona
 *** Polkadot [[https://polkadot.network/ 官网]]
-*** Substrate [[https://substrate.io/ 官网]] [[https://docs.substrate.io/?mode=dark doc]] [[https://marketplace.substrate.io/ marketplace]] [[https://kuanhsiaokuo.github.io/programming_anatomy_in_rust/layer5_ecosystem/7_business/blockchain/substrate/substrate_intro.html anatomy]]
+**** Substrate [[https://substrate.io/ 官网]] [[https://docs.substrate.io/?mode=dark doc]] [[https://marketplace.substrate.io/ marketplace]] [[https://kuanhsiaokuo.github.io/programming_anatomy_in_rust/layer5_ecosystem/7_business/blockchain/substrate/substrate_intro.html anatomy]]
 ** Dapp
+*** 学习资源
+****:Dapp-learning [[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/README-CN.md Dapp-Learning]]
+<code>
+本项目适合有一定语言基础的开发者入门区块链 DAPP 开发，由浅到深了解和开发 DeFi, NFT, DAO, CRYPTO 项目。
+
+项目愿景是给初级开发者一个可执行且最简的区块链 Dapp 学习路线图，给进阶开发者一个可以交流和协作的平台。
+
+本项目会成立学习小组进行任务分工，然后一起研究主流dapp项目，每周进行技术分享，输出成果会作为视频上传Youtube。
+
+项目秉持 开源大学 的理念，会以DAO治理形式管理此开源项目。本项目受以太坊基金会赞助，我们会将资金奖励给项目的优秀贡献者。开源项目维护不易，欢迎gitcoin捐赠。想跟踪项目最新进展，欢迎关注我们的推特和Youtube。 项目由来可以阅读《Dapp-Learning 欢迎您的加入》。
+
+此项目仍在开发中，适合各阶段的开发者加入，欢迎提 PR 来创建更多的教程项目或完善已有的教程项目🤗。项目交流可加入我们的 discord 。提交三次PR或者安排一次分享即可加入我们开发者群，持续贡献高质量PR可成为PR审核者，并参与决议项目走向。项目管理细则请参看新人如何参与以及项目治理规则，欢迎理念相同的小伙伴加入。
+</code>;
+***** 开发工具推荐 [[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/docs/develop-tools.md 开发工具推荐]]
+***** [[https://www.devpill.me/ web3技能大全]]
+*** Defi
+*** NFT
+*** DAO
+*** CRYPTO
 @endmindmap
