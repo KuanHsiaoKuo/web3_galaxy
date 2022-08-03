@@ -71,11 +71,13 @@ def extract_stars_name_links_color(line=''):
     color = None
     links = re.findall('\[\[(.*?)\]\]', line)
     link_dict = {}
-    # 将链接文字替换掉
-    for link in links:
+    for index, link in enumerate(links):
         href, title = link.split(' ', 1)
-        # line = line.replace(f"[[{href} {title}]]", f" {title}")
-        line = line.replace(f"[[{href} {title}]]", '')
+        # 除了第一个链接，其他都作为子链接
+        if index == 0:
+            line = line.replace(f"[[{href} {title}]]", '')
+        else:
+            line = line.replace(f"[[{href} {title}]]", f" {title}")
         link_dict[title] = href
     try:
         stars = re.split('[ :\[]', line)[0]

@@ -44,7 +44,7 @@
     },
     {
       "name": "layout",
-      "value": "tidy",
+      "value": "cluster",
       "bind": {
         "input": "radio",
         "options": [
@@ -55,7 +55,7 @@
     },
     {
       "name": "links",
-      "value": "curve",
+      "value": "orthogonal",
       "bind": {
         "input": "select",
         "options": [
