@@ -14,7 +14,7 @@
     },
     {
       "name": "layout",
-      "value": "tidy",
+      "value": "cluster",
       "bind": {
         "input": "radio",
         "options": [
@@ -25,7 +25,7 @@
     },
     {
       "name": "links",
-      "value": "diagonal",
+      "value": "orthogonal",
       "bind": {
         "input": "select",
         "options": [
@@ -38,7 +38,7 @@
     },
     {
       "name": "separation",
-      "value": false,
+      "value": true,
       "bind": {
         "input": "checkbox"
       }
@@ -187,6 +187,14 @@
           },
           "opacity": {
             "signal": "labels ? 1 : 0"
+          },
+          "href": {
+            "signal": "datum.link"
+          }
+        },
+        "hover": {
+          "tooltip": {
+            "signal": "datum.link || datum.note ? datum : ''"
           }
         }
       }
