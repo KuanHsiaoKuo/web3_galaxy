@@ -2,6 +2,18 @@
 * WEB3
 ** web3资料
 *** [[https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application The Architecture of a Web 3.0 application]]
+** cryptocurrency jobs
+*** [[https://eleduck.com/ 电鸭 - 远程工作、自由职业、兼职外包，自由从这开始]]
+*** [[https://cryptocurrencyjobs.co/ Cryptocurrency Jobs and Blockchain Jobs - Cryptocurrency Jobs]]
+*** [[https://angel.co/jobs Find Startup Jobs Near You and Remote Jobs | AngelList Talent]]
+*** [[https://www.paradigm.xyz/opportunities Opportunities - Paradigm]]
+** Hackathons
+*** [[https://gitcoin.co/hackathon/ Hackathons | Gitcoin]]
+***:[[https://github.com/ethereum-boilerplate/ethereum-boilerplate ethereum-boilerplate/ethereum-boilerplate️]]
+<code>
+The ultimate full-stack Ethereum Dapp Boilerplate which gives you maximum flexibility and speed. Feel free to fork and contribute. Although this repo is called "Ethereum Boilerplate" it works with any EVM system and even Solana support is coming soon! Happy BUIDL!👷‍♂
+</code>;
+*** [[https://immunefi.com/ Immunefi]]
 **:分层
 <code>
 这里的分层只是为了更好地解剖web3内容，
@@ -97,11 +109,22 @@ dApp还促进了用户设备和区块链之间的通信。
 <code>
  Examples of other non-EVM compatible blockchains that are popular are Solana (Rust/Anchor), Polkadot (Rust/Substrate), Cosmos , Terra , and others. Most of these blockchains do or will support the EVM stack through various initiatives like Neon EVM (Solana), Moonbeam/Moonriver (Polkadot/Kusama), EVMOS ( Cosmos ), etc.
 </code>;
-**** Solona
+**** Solona(Rust)
 ***** [[https://www.anchor-lang.com/ Anchor - Introduction]]
 ***** [[https://github.com/coral-xyz/anchor coral-xyz/anchor: ⚓ Solana Sealevel Framework]]
-**** Polkadot [[https://polkadot.network/ 官网]]
+****  [[https://polkadot.network/ Polkadot(Rust)]]
 ***** Substrate [[https://substrate.io/ 官网]] [[https://docs.substrate.io/?mode=dark doc]] [[https://marketplace.substrate.io/ marketplace]] [[https://kuanhsiaokuo.github.io/programming_anatomy_in_rust/layer5_ecosystem/7_business/blockchain/substrate/substrate_intro.html anatomy]]
+****:[[https://cosmos.network/ Cosmos-C++: The Internet of Blockchains]]
+<code>
+Cosmos一个最深入人心的描述是“区块链的互联网”，他想让区块链具有互操作性的网络框架，能作为一个桥梁来连接一个个独立的加密货币区块链，解决区块链之间的“孤岛效应”。
+Cosmos有一个很独特的宇宙观（Cosmos这个单词的翻译就是宇宙）：这个世界不可能由一个区块链主导，一定是多链并存，多币并行的世界。把整个“各自为政”的区块链世界，整合成一个完整的生态系统，就是它的终极理想。并且在Cosmos的观念中，认为"币"是可以脱离“链”的。在Cosmos里有个核心技术，使得代币可以跨区块链进行转移，这个核心技术就是Tendermint。Tendermint是区块链领域较早的基于拜占廷容错协议的PoS共识引擎。其实所有人都知道，未来的区块链一定是互联互通的，正如所有人在计算机诞生的时候就想到计算机之间一定是互联互通的一样，畅想都畅想完了，谁能把技术最早往前推进一步，谁就是明日之星。而目前跨链技术里最好的项目，一个叫Polkadot（波卡），也是今年绝对的明星项目；另外一个，就是本文的主角Cosmos了。
+</code>;
+***** Cosmos SDK(Golang)
+****** [[https://v1.cosmos.network/sdk Cosmos SDK:Golang - Cosmos Network]]
+****** [[https://docs.cosmos.network/ Cosmos SDK Documentation | Cosmos SDK]]
+****** [[https://github.com/cosmos/cosmos-sdk cosmos/cosmos-sdk: A Framework for Building High Value Public Blockchains]]
+***** Cosmos WASM(Rust)
+****** [[https://github.com/CosmWasm/cosmwasm CosmWasm/cosmwasm: Framework for building smart contracts in Wasm for the Cosmos SDK]]
 ** Dapp
 *** 学习资源
 ****:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/README-CN.md Dapp-Learning]]
@@ -195,50 +218,50 @@ IPFS 有一个称为 IPNS 的名称服务，它是一个基于 PKI 的全局名�
 *** CRYPTO
 ** 开发指南
 *** intro
-**** [[https://www.devpill.me/docs/introduction/blockchain-development/ What is blockchain development? - devpill.me (👨‍💻,💊)]]
+**** [[https://www.devpill.me/docs/introduction/blockchain-development/ What is blockchain development?]]
 *** Ethereum
 **** [[https://www.devpill.me/ web3技能大全]]
-**** [[https://www.devpill.me/docs/introduction/skill-based/ Skill-based specializations - devpill.me (👨‍💻,💊)]]
+**** [[https://www.devpill.me/docs/introduction/skill-based/ Skill-based specializations]]
 ***** [[https://www.devpill.me/docs/front-end-development/introduction/ Front End Development]]
-****** [[https://www.devpill.me/docs/front-end-development/react/ React - devpill.me (👨‍💻,💊)]]
-****** [[https://www.devpill.me/docs/front-end-development/typescript/ Typescript - devpill.me (👨‍💻,💊)]]
-****** [[https://www.devpill.me/docs/front-end-development/nextjs/ NextJS - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/front-end-development/react/ React]]
+****** [[https://www.devpill.me/docs/front-end-development/typescript/ Typescript]]
+****** [[https://www.devpill.me/docs/front-end-development/nextjs/ NextJS]]
 ****** Indexing/Quering
-******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#thegraph TheGraph - devpill.me (👨‍💻,💊)]]
-******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#nodes Nodes - devpill.me (👨‍💻,💊)]]
-******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#moralis Moralis - devpill.me (👨‍💻,💊)]]
-****** [[https://www.devpill.me/docs/front-end-development/web3-libraries/ Web3 libraries(Ether.js) - devpill.me (👨‍💻,💊)]]
-****** [[https://www.devpill.me/docs/front-end-development/web3-templates/ Web3 templates - devpill.me (👨‍💻,💊)]]
+******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#thegraph TheGraph]]
+******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#nodes Nodes]]
+******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#moralis Moralis]]
+****** [[https://www.devpill.me/docs/front-end-development/web3-libraries/ Web3 libraries(Ether.js)]]
+****** [[https://www.devpill.me/docs/front-end-development/web3-templates/ Web3 templates]]
 ******* [[https://docs.moralis.io/moralis-dapp/connect-the-sdk/boilerplate-projects Moralis Starter-Boilerplate Projects - Moralis]]
 ******* [[https://github.com/scaffold-eth/scaffold-eth scaffold-eth/scaffold-eth: 🏗 forkable Ethereum dev stack focused on fast product iterations]]
 ******* [[https://github.com/paulrberg/create-eth-app paulrberg/create-eth-app: Create Ethereum-powered apps with one command]]
 ***** [[https://www.devpill.me/docs/back-end-development/introduction/ Backend Development]]
-****** [[https://www.devpill.me/docs/back-end-development/file-storage/ Decentralized file storage - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/back-end-development/file-storage/ Decentralized file storage]]
 ******* [[https://ipfs.tech/ IPFS Powers the Distributed Web]]
 ******* [[https://www.arweave.org/ arweave]]
-****** [[https://www.devpill.me/docs/back-end-development/did/ DID - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/back-end-development/did/ DID]]
 ******* [[https://www.spruceid.com/ Spruce - Decentralized Identity and Data]]
 ******* [[https://login.xyz/ Sign-In with Ethereum]]
-****** [[https://www.devpill.me/docs/back-end-development/automation/ Automation - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/back-end-development/automation/ Automation]]
 ******* [[https://www.gelato.network/ Gelato - Automated smart contract executions on Ethereum]]
-****** [[https://www.devpill.me/docs/back-end-development/apis/ Miscellaneous APIs - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/back-end-development/apis/ Miscellaneous APIs]]
 ******* [[https://docs.opensea.io/reference/api-overview Opensea API Overview]]
 ***** [[https://www.devpill.me/docs/smart-contract-development/introduction/ Smart Contract Development]]
-****** [[https://www.devpill.me/docs/smart-contract-development/solidity/ Solidity - devpill.me (👨‍💻,💊)]]
-****** [[https://www.devpill.me/docs/smart-contract-development/oracles/ Oracles - devpill.me (👨‍💻,💊)]]
-****** [[https://www.devpill.me/docs/smart-contract-development/testing/ Testing - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/smart-contract-development/solidity/ Solidity]]
+****** [[https://www.devpill.me/docs/smart-contract-development/oracles/ Oracles]]
+****** [[https://www.devpill.me/docs/smart-contract-development/testing/ Testing]]
 ******* [[https://github.com/foundry-rs/foundry foundry-rs/foundry: Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.]]
 ******* [[https://hardhat.org/ Hardhat | Ethereum development environment for professionals by Nomic Foundation]]
 ******* [[https://github.com/dapphub/dapptools dapphub/dapptools: Dapp, Seth, Hevm, and more]]
 ******* [[https://trufflesuite.com/ Home - Truffle Suite]]
-****** [[https://www.devpill.me/docs/smart-contract-development/design-patterns/ Design patterns - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/smart-contract-development/design-patterns/ Design patterns]]
 ******* [[https://docs.ens.domains/contract-developer-guide/resolving-names-on-chain Resolving Names On-chain - ENS Documentation]]
 ******* [[https://docs.ens.domains/contract-developer-guide/writing-a-resolver Writing a Resolver - ENS Documentation]]
-****** [[https://www.devpill.me/docs/smart-contract-development/specialized-languages/ Specialized languages - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/smart-contract-development/specialized-languages/ Specialized languages]]
 ******* [[https://docs.soliditylang.org/en/v0.8.12/yul.html Yul — Solidity 0.8.12 documentation]]
 ******* [[https://github.com/fuelLabs/yulp FuelLabs/yulp: ➕ A low-level, highly efficient extension to Yul, an intermediate language for the Ethereum Virtual Machine.]]
 ******* [[https://docs.soliditylang.org/en/v0.8.12/assembly.html Inline Assembly — Solidity 0.8.12 documentation]]
-****** [[https://www.devpill.me/docs/smart-contract-development/evm-deep-dive/ EVM deep dive - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/smart-contract-development/evm-deep-dive/ EVM deep dive]]
 ******* [[https://noxx3xxon.notion.site/noxx3xxon/The-EVM-Handbook-bb38e175cc404111a391907c4975426d The EVM Handbook]]
 ******* [[https://freddycoen.medium.com/evm-starter-kit-1790bcc992ef EVM development Starter Kit. Note: This blog post is divided into… | by FreddyCoen | Medium]]
 ******* [[https://github.com/ethereumbook/ethereumbook/blob/develop/13evm.asciidoc ethereumbook/13evm.asciidoc at develop · ethereumbook/ethereumbook]]
@@ -260,7 +283,7 @@ management, and other relevant information.
 ****** [[https://github.com/OffcierCia/DeFi-Developer-Road-Map OffcierCia/DeFi-Developer-Road-Map: DeFi Developer roadmap is a curated Web3.0 Developer handbook which includes a list of the best tools for DApps, development resources and lifehacks.]]
 ****** [[https://www.youtube.com/watch?v=xXxjRzdYIss Build Uniswap Blockchain Web 3.0 App with Solidity | Next.js | Sanity.io ($100 Crypto Giveaway) - YouTube]]
 ***** [[https://www.devpill.me/docs/core-development/introduction/ Core Development]]
-****** [[https://www.devpill.me/docs/core-development/general-learning/ General learning - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/core-development/general-learning/ General learning]]
 ******:[[https://www.devpill.me/docs/core-development/l1/ Eth1 / execution layer]]
 <code>
 Networking: devp2p

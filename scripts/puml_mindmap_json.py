@@ -27,7 +27,7 @@ def converter(puml_path: str):
         for index, line in enumerate(lines):
             # 标题的*后面只会出现三种情况：空格、:、[
             if line.startswith('*'):
-                stars, name, color, links = extract_stars_name_links_color(line)
+                stars, name, color, links, title_note = extract_stars_name_links_color(line)
                 levels[stars] = (line, title_index)
                 parent = levels.get(stars[:-1])
                 node = {
@@ -61,7 +61,7 @@ def converter(puml_path: str):
                 if index < len(lines) and lines[index + 1].startswith('<code>'):
                     note = notes.pop(0)
                     print(f"弹出的注释：{note}")
-                    node['note'] = note
+                    node['note'] = f"{title_note}\n{note}" if title_note else note
                 json_results.append(node)
                 title_index += 1
     filename = f"{re.split('[/|.]', puml_path)[-2]}.json"
@@ -90,10 +90,14 @@ def extract_stars_name_links_color(line=''):
             name = name.split(']')[1]
         if name.startswith(':'):  # 如果有注释
             name = name[1:]
+        if ': ' in name: # 如果是github这种在": "之后有说明的
+            name, title_note = name.split(': ', 1)
+        else:
+            title_note = None
     except:
         print(line)
     wrap_name = get_wrap_name(name)
-    return stars, wrap_name, color, link_dict
+    return stars, wrap_name, color, link_dict, title_note
 
 
 def get_wrap_name(name):
