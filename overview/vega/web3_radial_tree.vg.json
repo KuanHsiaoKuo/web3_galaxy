@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "An example of a radial layout for a node-link diagram of hierarchical data.",
-  "width": 800,
-  "height": 800,
+  "width": 1920,
+  "height": 1920,
   "padding": 5,
   "autosize": "none",
   "signals": [
@@ -55,7 +55,7 @@
     },
     {
       "name": "links",
-      "value": "orthogonal",
+      "value": "diagonal",
       "bind": {
         "input": "select",
         "options": [
