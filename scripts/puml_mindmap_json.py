@@ -43,16 +43,19 @@ def converter(puml_path: str):
                     link_count = 1
                     for link_name, link in links.items():
                         title_index += 1
-                        wrap_link_name = get_wrap_name(f"链接{link_count}: {link_name}")
-                        child_node = {
-                            "id": title_index,
-                            "name": wrap_link_name,
-                            "link": link,
-                            "parent": node['id'],
-                            "note": f'来自{node["name"]}的链接'
-                        }
-                        json_results.append(child_node)
-                        link_count += 1
+                        if link_count == 1:
+                            node['link'] = link
+                        if link_count > 1:  # 多于一个链接才作为子节点
+                            wrap_link_name = get_wrap_name(f"链接{link_count}: {link_name}")
+                            child_node = {
+                                "id": title_index,
+                                "name": wrap_link_name,
+                                "link": link,
+                                "parent": node['id'],
+                                "note": f'来自{node["name"]}的链接'
+                            }
+                            json_results.append(child_node)
+                            link_count += 1
                 if color:
                     node["color"] = '#' + color
                 if index < len(lines) and lines[index + 1].startswith('<code>'):
@@ -75,9 +78,9 @@ def extract_stars_name_links_color(line=''):
         href, title = link.split(' ', 1)
         # 除了第一个链接，其他都作为子链接
         if index == 0:
-            line = line.replace(f"[[{href} {title}]]", '')
+            line = line.replace(f"[[{href} {title}]]", f' {title}')
         else:
-            line = line.replace(f"[[{href} {title}]]", f" {title}")
+            line = line.replace(f"[[{href} {title}]]", "")
         link_dict[title] = href
     try:
         stars = re.split('[ :\[]', line)[0]

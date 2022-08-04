@@ -1,12 +1,14 @@
 @startmindmap
 * WEB3
+** web3资料
+*** [[https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application The Architecture of a Web 3.0 application]]
 **:分层
 <code>
 这里的分层只是为了更好地解剖web3内容，
 其实很多内容会跨几个层。
 比如区块链就跨了前4层
 </code>;
-***:Layer(s)0:通信层
+***:Layer(s)0:通信层(RPC/WS)
 <code>
 区块链数据安全地存储在数据服务器中。
 当我们浏览网页或使用任何区块链应用程序时，
@@ -20,7 +22,7 @@
 与网络上的另一个设备通信的每个设备都是一个节点。
 每个节点随机验证交易数据。
 </code>;
-***:Layers I
+***:Layers I: Blockchain
 <code>
 此处是指第一个范围，区块链就属于这个范围
 </code>;
@@ -76,7 +78,7 @@ P2P 框架使各个节点能够交换交易数据以就
 </code>;
 **** Layer4:激励层
 **** Layer5:合约层
-*** Layers II
+*** Layers II: Dapp
 ****:Layer6:应用层(dApp)
 <code>
 这是运行智能合约和去中心化应用程序 (dApp) 的层。
@@ -89,13 +91,20 @@ dApp还促进了用户设备和区块链之间的通信。
 数据安全地存储在其中。
 </code>;
 ** Blockchain
-*** ETH
-*** Solona
-*** Polkadot [[https://polkadot.network/ 官网]]
-**** Substrate [[https://substrate.io/ 官网]] [[https://docs.substrate.io/?mode=dark doc]] [[https://marketplace.substrate.io/ marketplace]] [[https://kuanhsiaokuo.github.io/programming_anatomy_in_rust/layer5_ecosystem/7_business/blockchain/substrate/substrate_intro.html anatomy]]
+*** [[https://www.devpill.me/docs/introduction/foreword/ why split by EVM]]
+*** ETH(EVM)
+***:non-EVM
+<code>
+ Examples of other non-EVM compatible blockchains that are popular are Solana (Rust/Anchor), Polkadot (Rust/Substrate), Cosmos , Terra , and others. Most of these blockchains do or will support the EVM stack through various initiatives like Neon EVM (Solana), Moonbeam/Moonriver (Polkadot/Kusama), EVMOS ( Cosmos ), etc.
+</code>;
+**** Solona
+***** [[https://www.anchor-lang.com/ Anchor - Introduction]]
+***** [[https://github.com/coral-xyz/anchor coral-xyz/anchor: ⚓ Solana Sealevel Framework]]
+**** Polkadot [[https://polkadot.network/ 官网]]
+***** Substrate [[https://substrate.io/ 官网]] [[https://docs.substrate.io/?mode=dark doc]] [[https://marketplace.substrate.io/ marketplace]] [[https://kuanhsiaokuo.github.io/programming_anatomy_in_rust/layer5_ecosystem/7_business/blockchain/substrate/substrate_intro.html anatomy]]
 ** Dapp
 *** 学习资源
-****:Dapp-learning [[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/README-CN.md Dapp-Learning]]
+****:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/README-CN.md Dapp-Learning]]
 <code>
 本项目适合有一定语言基础的开发者入门区块链 DAPP 开发，由浅到深了解和开发 DeFi, NFT, DAO, CRYPTO 项目。
 
@@ -107,7 +116,79 @@ dApp还促进了用户设备和区块链之间的通信。
 
 此项目仍在开发中，适合各阶段的开发者加入，欢迎提 PR 来创建更多的教程项目或完善已有的教程项目🤗。项目交流可加入我们的 discord 。提交三次PR或者安排一次分享即可加入我们开发者群，持续贡献高质量PR可成为PR审核者，并参与决议项目走向。项目管理细则请参看新人如何参与以及项目治理规则，欢迎理念相同的小伙伴加入。
 </code>;
-***** 开发工具推荐 [[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/docs/develop-tools.md 开发工具推荐]]
+***** web3js
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/01-web3js-deploy/README-cn.md Dapp-Learning/README-cn.md at main · deploy]]
+<code>
+通过本样例代码，使开发者了解合约编译，部署的基本流程，并掌握基本的 web3js 接口使用方法
+</code>;
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/02-web3js-transaction/README-cn.md Dapp-Learning/README-cn.md at main · transaction]]
+<code>
+通过本样例代码，开发者了解到如何对交易进行签名，发送，接收交易回执，验证交易执行结果。同时，样例也提供了事件监听的逻辑代码，开发者可以了解如何对一个事件进行一次或多次监听
+</code>;
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/03-web3js-erc20/README-cn.md Dapp-Learning/README-cn.md at main · erc20]]
+<code>
+本样例演示了 ERC20 合约的基本调用, 让开发者了解 ERC20 合约的基本接口
+</code>;
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/04-web3js-truffle/README-CN.md Dapp-Learning/README-CN.md at main · Truffle]]
+<code>
+ruffle 是基于 Solidity 语言的一套开发框架，它简化了去中心化应用（Dapp）的构建和管理流程。本身是采用 Javascript 编写，支持智能合约的编译、部署和测试。
+</code>;
+***** ethersjs
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/05-ethersjs-erc20/web3-vs-ethers/README-cn.md Dapp-Learning/README-cn.md at main · web3-vs-ethers]]
+<code>
+通过本样例代码，开发者了解到 web3.js和 ehters.js的区别
+项目里主要针对 连接到etherum ，获取账户，部署合约，调用合约方法这些业务做了示例演示。
+</code>;
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/05-ethersjs-erc20/README-CN.md Dapp-Learning/README-CN.md at main · erc20]]
+<code>
+本样例演示了使用 ethers.js 调用 ERC20 合约的开发流程
+</code>;
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/06-ethersjs-waffle/README-cn.md Dapp-Learning/README-cn.md at main · waffle]]
+<code>
+Waffle 是一款适配 ehter.js 的智能合约测试库。本样例演示了使用 Waffle 进行测试的基本流程及使用方法.
+Waffle 详细使用方法可以参考 Waffle 官网 , 对于不熟悉 Waffle 测试框架的开发者, 可以根据本样例进行基础的操作, 阅读样例代码, 形成初步的流程概念, 之后再参考官网进行更加深入的了解.
+</code>;
+*****:Hardhat
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/07-hardhat/README-cn.md Dapp-Learning/README-cn.md at main · 基础使用]]
+<code>
+Hardhat 是一个编译、部署、测试和调试以太坊应用的开发环境。
+
+它可以帮助开发人员管理和自动化构建智能合约和 dApps 过程中固有的重复性任务，并围绕这一工作流程轻松引入更多功能。这意味着 hardhat 在最核心的地方是编译、运行和测试智能合约。 Hardhat 内置了 Hardhat 网络，这是一个专为开发设计的本地以太坊网络。主要功能有 Solidity 调试，跟踪调用堆栈、console.log()和交易失败时的明确错误信息提示等。
+
+Hardhat Runner 是与 Hardhat 交互的 CLI 命令，是一个可扩展的任务运行器。它是围绕任务和插件的概念设计的。每次你从 CLI 运行 Hardhat 时，你都在运行一个任务。例如，npx hardhat compile 运行的是内置的 compile 任务。任务可以调用其他任务，允许定义复杂的工作流程。用户和插件可以覆盖现有的任务，从而定制和扩展工作流程。
+</code>;
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/08-hardhat-graph/README-CN.md Dapp-Learning/README-CN.md at main · Graph]]
+<code>
+编写智能合约时，通常状态的变化是通过触发一个事件来表达，The Graph 则是捕捉区块链事件并提供一个查询事件的 GraphQL 接口，让我们可以方便的跟踪数据的变化。实际上很多 defi 协议都是 The Graph 来基于查询数据。
+</code>;
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/09-hardhat-react/README-CN.md Dapp-Learning/README-CN.md at main · hardhat-react]]
+<code>
+app 开发中很重要的部分便是前端展示，本样例代码使用 hardhat 结合 react 和 MetaMask，演示如何开发 Dapp 前端页面，以及开发的基本流程及接口调用。开发者需要具备 react 框架开发能力才能很好的理解样例代码.
+
+为方便获取，在 .env 中放入的私钥，格式为 "PRIVATE_KEY=xxxx", 然后代码自动从中读取
+</code>;
+******:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/10-hardhat-ipfs-erc721/README-CN.md hardhat-ipfs-erc721]]
+<code>
+是一个旨在创建持久且分布式存储和共享文件的网络传输协议。它是一种内容可寻址的对等超媒体分发协议。
+
+在 IPFS 网络中的节点将构成一个分布式文件系统。它是一个开放源代码项目，自 2014 年开始由协议实验室在开源社区的帮助下发展。其最初由 Juan Benet 设计
+IPFS 是一个对等的分布式文件系统，它尝试为所有计算设备连接同一个文件系统。在某些方面，IPFS 类似于万维网，也可以被视作一个独立的 BitTorrent 群、在同一个 Git 仓库中交换对象。 换种说法，IPFS 提供了一个高吞吐量、按内容寻址的块存储模型，及与内容相关超链接。这形成了一个广义的 Merkle 有向无环图（DAG）。
+
+IPFS 结合了分布式散列表、鼓励块交换和一个自我认证的名字空间。IPFS 没有单点故障，并且节点不需要相互信任。分布式内容传递可以节约带宽，和防止 HTTP 方案可能遇到的 DDoS 攻击。
+
+该文件系统可以通过多种方式访问，包括 FUSE 与 HTTP。将本地文件添加到 IPFS 文件系统可使其面向全世界可用。文件表示基于其哈希，因此有利于缓存。文件的分发采用一个基于 BitTorrent 的协议。其他查看内容的用户也有助于将内容提供给网络上的其他人。
+IPFS 有一个称为 IPNS 的名称服务，它是一个基于 PKI 的全局名字空间，用于构筑信任链，这与其他 NS 兼容，并可以映射 DNS、.onion、.bit 等到 IPNS。
+</code>;
+****** [[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/11-react-express-hardhat/README-CN.md Express结合hardhat]]
+*****:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/12-token-crowdfund/README-CN.md Dapp-Learning/README-CN.md at main 众筹合约]]
+<code>
+本样例演示众筹合约的基本流程，包括部署合约、合约以及启动众筹项目。
+</code>;
+**** [[https://twitter.com/Dapp_Learning Dapp-Learning (@Dapp_Learning) / Twitter]]
+**** [[https://www.youtube.com/c/DappLearning/videos Dapp Learning - YouTube]]
+**** [[https://docs.qq.com/doc/DQ3hWeVVXQ3JPbXFS Dapp-Learning开源大学分享列表]]
+**** [[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/docs/develop-tools.md 开发工具推荐]]
+**** [[https://discord.com/invite/cRYNYXqPeR Discord Room-Dapp Learning]]
 *** Defi
 *** NFT
 *** DAO
@@ -119,11 +200,85 @@ dApp还促进了用户设备和区块链之间的通信。
 **** [[https://www.devpill.me/ web3技能大全]]
 **** [[https://www.devpill.me/docs/introduction/skill-based/ Skill-based specializations - devpill.me (👨‍💻,💊)]]
 ***** [[https://www.devpill.me/docs/front-end-development/introduction/ Front End Development]]
-***** [[https://www.devpill.me/docs/smart-contract-development/introduction/ Smart Contract Development]]
+****** [[https://www.devpill.me/docs/front-end-development/react/ React - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/front-end-development/typescript/ Typescript - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/front-end-development/nextjs/ NextJS - devpill.me (👨‍💻,💊)]]
+****** Indexing/Quering
+******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#thegraph TheGraph - devpill.me (👨‍💻,💊)]]
+******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#nodes Nodes - devpill.me (👨‍💻,💊)]]
+******* [[https://www.devpill.me/docs/front-end-development/indexing-querying/#moralis Moralis - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/front-end-development/web3-libraries/ Web3 libraries(Ether.js) - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/front-end-development/web3-templates/ Web3 templates - devpill.me (👨‍💻,💊)]]
+******* [[https://docs.moralis.io/moralis-dapp/connect-the-sdk/boilerplate-projects Moralis Starter-Boilerplate Projects - Moralis]]
+******* [[https://github.com/scaffold-eth/scaffold-eth scaffold-eth/scaffold-eth: 🏗 forkable Ethereum dev stack focused on fast product iterations]]
+******* [[https://github.com/paulrberg/create-eth-app paulrberg/create-eth-app: Create Ethereum-powered apps with one command]]
 ***** [[https://www.devpill.me/docs/back-end-development/introduction/ Backend Development]]
-***** [[https://www.devpill.me/docs/full-stack-development/introduction/ Full Stack Development]]
+****** [[https://www.devpill.me/docs/back-end-development/file-storage/ Decentralized file storage - devpill.me (👨‍💻,💊)]]
+******* [[https://ipfs.tech/ IPFS Powers the Distributed Web]]
+******* [[https://www.arweave.org/ arweave]]
+****** [[https://www.devpill.me/docs/back-end-development/did/ DID - devpill.me (👨‍💻,💊)]]
+******* [[https://www.spruceid.com/ Spruce - Decentralized Identity and Data]]
+******* [[https://login.xyz/ Sign-In with Ethereum]]
+****** [[https://www.devpill.me/docs/back-end-development/automation/ Automation - devpill.me (👨‍💻,💊)]]
+******* [[https://www.gelato.network/ Gelato - Automated smart contract executions on Ethereum]]
+****** [[https://www.devpill.me/docs/back-end-development/apis/ Miscellaneous APIs - devpill.me (👨‍💻,💊)]]
+******* [[https://docs.opensea.io/reference/api-overview Opensea API Overview]]
+***** [[https://www.devpill.me/docs/smart-contract-development/introduction/ Smart Contract Development]]
+****** [[https://www.devpill.me/docs/smart-contract-development/solidity/ Solidity - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/smart-contract-development/oracles/ Oracles - devpill.me (👨‍💻,💊)]]
+****** [[https://www.devpill.me/docs/smart-contract-development/testing/ Testing - devpill.me (👨‍💻,💊)]]
+******* [[https://github.com/foundry-rs/foundry foundry-rs/foundry: Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.]]
+******* [[https://hardhat.org/ Hardhat | Ethereum development environment for professionals by Nomic Foundation]]
+******* [[https://github.com/dapphub/dapptools dapphub/dapptools: Dapp, Seth, Hevm, and more]]
+******* [[https://trufflesuite.com/ Home - Truffle Suite]]
+****** [[https://www.devpill.me/docs/smart-contract-development/design-patterns/ Design patterns - devpill.me (👨‍💻,💊)]]
+******* [[https://docs.ens.domains/contract-developer-guide/resolving-names-on-chain Resolving Names On-chain - ENS Documentation]]
+******* [[https://docs.ens.domains/contract-developer-guide/writing-a-resolver Writing a Resolver - ENS Documentation]]
+****** [[https://www.devpill.me/docs/smart-contract-development/specialized-languages/ Specialized languages - devpill.me (👨‍💻,💊)]]
+******* [[https://docs.soliditylang.org/en/v0.8.12/yul.html Yul — Solidity 0.8.12 documentation]]
+******* [[https://github.com/fuelLabs/yulp FuelLabs/yulp: ➕ A low-level, highly efficient extension to Yul, an intermediate language for the Ethereum Virtual Machine.]]
+******* [[https://docs.soliditylang.org/en/v0.8.12/assembly.html Inline Assembly — Solidity 0.8.12 documentation]]
+****** [[https://www.devpill.me/docs/smart-contract-development/evm-deep-dive/ EVM deep dive - devpill.me (👨‍💻,💊)]]
+******* [[https://noxx3xxon.notion.site/noxx3xxon/The-EVM-Handbook-bb38e175cc404111a391907c4975426d The EVM Handbook]]
+******* [[https://freddycoen.medium.com/evm-starter-kit-1790bcc992ef EVM development Starter Kit. Note: This blog post is divided into… | by FreddyCoen | Medium]]
+******* [[https://github.com/ethereumbook/ethereumbook/blob/develop/13evm.asciidoc ethereumbook/13evm.asciidoc at develop · ethereumbook/ethereumbook]]
+******* [[https://femboy.capital/evm-pt1 A Playdate with the EVM - femboy capital]]
+******* and more
+*****:[[https://www.devpill.me/docs/full-stack-development/introduction/ Full Stack Development]]
+<code>
+Since rewriting the front end, back end and smart contract sections
+would be pointless, I’ll dedicate this section just to list a bunch
+of full-stack guides, tips and tricks, deployment guidelines, project
+management, and other relevant information.
+</code>;
+****** [[https://github.com/ossu/computer-science ossu/computer-science: Path to a free self-taught education in Computer Science!]]
+****** [[https://www.youtube.com/watch?v=MlJPjJQZtC8 👨‍🏫 Introduction to Ethereum development - YouTube]]
+****** [[https://dev.to/edge-and-node/the-complete-guide-to-full-stack-web3-development-4g74 The Complete Guide to Full Stack Web3 Development - DEV Community]] [[https://twitter.com/dabit3 nader (🧱, 🚀) | nader.arweave.dev | nader.lens 🧢 (@dabit3) / Twitter]]
+****** [[https://speedrunethereum.com/ Speed Run Ethereum]] [[https://twitter.com/austingriffith Austin Griffith (@austingriffith) / Twitter]]
+****** [[https://www.youtube.com/watch?v=M576WGiDBdQ Solidity, Blockchain, and Smart Contract Course – Beginner to Expert Python Tutorial - YouTube]]
+****** [[https://github.com/smartcontractkit/full-blockchain-solidity-course-py smartcontractkit/full-blockchain-solidity-course-py: Ultimate Solidity, Blockchain, and Smart Contract - Beginner to Expert Full Course | Python Edition]] [[https://twitter.com/PatrickAlphaC Patrick Collins (@PatrickAlphaC) / Twitter]]
+****** [[https://github.com/OffcierCia/DeFi-Developer-Road-Map OffcierCia/DeFi-Developer-Road-Map: DeFi Developer roadmap is a curated Web3.0 Developer handbook which includes a list of the best tools for DApps, development resources and lifehacks.]]
+****** [[https://www.youtube.com/watch?v=xXxjRzdYIss Build Uniswap Blockchain Web 3.0 App with Solidity | Next.js | Sanity.io ($100 Crypto Giveaway) - YouTube]]
 ***** [[https://www.devpill.me/docs/core-development/introduction/ Core Development]]
-***** Core development
+****** [[https://www.devpill.me/docs/core-development/general-learning/ General learning - devpill.me (👨‍💻,💊)]]
+******:[[https://www.devpill.me/docs/core-development/l1/ Eth1 / execution layer]]
+<code>
+Networking: devp2p
+EVM
+Tx pool
+Sync methods (Fast, Snap, Archive, Beam, Light)
+State DB
+User-facing (JSON RPC, tx tracing, etc.)
+</code>;
+******:[[https://www.devpill.me/docs/core-development/l2/ Eth2 / consensus layer]]
+<code>
+Networking: libp2p
+Fork-choice
+Attestations / BLS aggregation
+Staking / Validator clients
+Slashings
+Sharding
+</code>;
 ***** Security engineer
 ***** Protocol development
 ***** Cryptographer
@@ -137,8 +292,5 @@ dApp还促进了用户设备和区块链之间的通信。
 ***** Gaming
 ***** Privacy
 ***** Coordination / Public goods
-***:non-EVM [[https://www.devpill.me/docs/introduction/foreword/ why split by EVM]]
-<code>
- Examples of other non-EVM compatible blockchains that are popular are Solana (Rust/Anchor), Polkadot (Rust/Substrate), Cosmos , Terra , and others. Most of these blockchains do or will support the EVM stack through various initiatives like Neon EVM (Solana), Moonbeam/Moonriver (Polkadot/Kusama), EVMOS ( Cosmos ), etc.
-</code>;
+
 @endmindmap
