@@ -30,13 +30,15 @@ def converter(puml_path: str):
                 stars, name, color, links, title_note = extract_stars_name_links_color(line)
                 levels[stars] = (line, title_index)
                 parent = levels.get(stars[:-1])
+                has_child = False
                 node = {
                     "id": title_index,
-                    "name": name,
+                    # "name": wrap_name,
                     # "size": len(name)
                     # "link": 'https://www.google.com'
                 }
                 if parent:
+                    has_child = True
                     node["parent"] = parent[1]
                 if links:
                     # 如果是有链接，就变成子节点
@@ -46,7 +48,8 @@ def converter(puml_path: str):
                         if link_count == 1:
                             node['link'] = link
                         if link_count > 1:  # 多于一个链接才作为子节点
-                            wrap_link_name = get_wrap_name(f"链接{link_count}: {link_name}")
+                            has_child = False
+                            wrap_link_name = get_wrap_name(f"链接{link_count}: {link_name}", has_child)
                             child_node = {
                                 "id": title_index,
                                 "name": wrap_link_name,
@@ -62,6 +65,8 @@ def converter(puml_path: str):
                     note = notes.pop(0)
                     print(f"弹出的注释：{note}")
                     node['note'] = f"{title_note}\n{note}" if title_note else note
+                wrap_name = get_wrap_name(name, has_child)
+                node['name'] = wrap_name
                 json_results.append(node)
                 title_index += 1
     filename = f"{re.split('[/|.]', puml_path)[-2]}.json"
@@ -96,22 +101,32 @@ def extract_stars_name_links_color(line=''):
             title_note = None
     except:
         print(line)
-    wrap_name = get_wrap_name(name)
-    return stars, wrap_name, color, link_dict, title_note
+    return stars, name, color, link_dict, title_note
 
 
-def get_wrap_name(name):
+def get_wrap_name(name, has_child):
+    """
+    根据是否有子节点选择是否换行
+    1. 有子节点，选择换行
+    2. 没有子节点，不需要换行，否则文字会重叠
+    :param name:
+    :param has_child:
+    :return:
+    """
     # 统一添加换行符
-    wrap_name = []
-    space_count = 0
-    for char in name:
-        if char == ' ':
-            space_count += 1
-        if space_count == 3:
-            char = '\n'
-            space_count = 0
-        wrap_name.append(char)
-    return ''.join(wrap_name)
+    if not has_child:
+        wrap_name = []
+        space_count = 0
+        for char in name:
+            if char == ' ':
+                space_count += 1
+            if space_count == 3:
+                char = '\n'
+                space_count = 0
+            wrap_name.append(char)
+        return ''.join(wrap_name)
+    else:
+        return name
 
 
 def extract_notes(text=''):
