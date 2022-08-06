@@ -3,3 +3,4 @@
     - [俯瞰角度2: sun burst](overview/web3_sun_burst.html)
     - [俯瞰角度3: tree](overview/web3_tree.html)
     - [俯瞰角度4: treemap](overview/web3_treemap.html)
+    - [俯瞰角度5: 气泡图](overview/web3_bubble_chart.html)

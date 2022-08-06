@@ -102,29 +102,92 @@ dApp还促进了用户设备和区块链之间的通信。
 因此，应用程序就像面向用户的前端，而主区块链是后端，
 数据安全地存储在其中。
 </code>;
-** Blockchain
-*** [[https://www.devpill.me/docs/introduction/foreword/ why split by EVM]]
-*** ETH(EVM)
-***:non-EVM
+** 分布式系统
+*** Blockchain
+**** [[https://www.devpill.me/docs/introduction/foreword/ why split by EVM]]
+**** ETH(EVM)
+****:non-EVM
 <code>
- Examples of other non-EVM compatible blockchains that are popular are Solana (Rust/Anchor), Polkadot (Rust/Substrate), Cosmos , Terra , and others. Most of these blockchains do or will support the EVM stack through various initiatives like Neon EVM (Solana), Moonbeam/Moonriver (Polkadot/Kusama), EVMOS ( Cosmos ), etc.
+ Examples of other non-EVM compatible blockchains that are
+ popular are Solana (Rust/Anchor), Polkadot (Rust/Substrate),
+ Cosmos , Terra , and others. Most of these blockchains do or
+ will support the EVM stack through various initiatives like
+ Neon EVM (Solana), Moonbeam/Moonriver (Polkadot/Kusama),
+ EVMOS ( Cosmos ), etc.
 </code>;
-**** Solona(Rust)
-***** [[https://www.anchor-lang.com/ Anchor - Introduction]]
-***** [[https://github.com/coral-xyz/anchor coral-xyz/anchor: ⚓ Solana Sealevel Framework]]
-****  [[https://polkadot.network/ Polkadot(Rust)]]
-***** Substrate [[https://substrate.io/ 官网]] [[https://docs.substrate.io/?mode=dark doc]] [[https://marketplace.substrate.io/ marketplace]] [[https://kuanhsiaokuo.github.io/programming_anatomy_in_rust/layer5_ecosystem/7_business/blockchain/substrate/substrate_intro.html anatomy]]
-****:[[https://cosmos.network/ Cosmos-C++: The Internet of Blockchains]]
+***** Solona(Rust)
+****** [[https://www.anchor-lang.com/ Anchor - Introduction]]
+****** [[https://github.com/coral-xyz/anchor coral-xyz/anchor: ⚓ Solana Sealevel Framework]]
+*****  [[https://polkadot.network/ Polkadot(Rust)]]
+****** Substrate [[https://substrate.io/ 官网]] [[https://docs.substrate.io/?mode=dark doc]] [[https://marketplace.substrate.io/ marketplace]] [[https://kuanhsiaokuo.github.io/programming_anatomy_in_rust/layer5_ecosystem/7_business/blockchain/substrate/substrate_intro.html anatomy]]
+*****:[[https://cosmos.network/ Cosmos-C++: The Internet of Blockchains]]
 <code>
 Cosmos一个最深入人心的描述是“区块链的互联网”，他想让区块链具有互操作性的网络框架，能作为一个桥梁来连接一个个独立的加密货币区块链，解决区块链之间的“孤岛效应”。
 Cosmos有一个很独特的宇宙观（Cosmos这个单词的翻译就是宇宙）：这个世界不可能由一个区块链主导，一定是多链并存，多币并行的世界。把整个“各自为政”的区块链世界，整合成一个完整的生态系统，就是它的终极理想。并且在Cosmos的观念中，认为"币"是可以脱离“链”的。在Cosmos里有个核心技术，使得代币可以跨区块链进行转移，这个核心技术就是Tendermint。Tendermint是区块链领域较早的基于拜占廷容错协议的PoS共识引擎。其实所有人都知道，未来的区块链一定是互联互通的，正如所有人在计算机诞生的时候就想到计算机之间一定是互联互通的一样，畅想都畅想完了，谁能把技术最早往前推进一步，谁就是明日之星。而目前跨链技术里最好的项目，一个叫Polkadot（波卡），也是今年绝对的明星项目；另外一个，就是本文的主角Cosmos了。
 </code>;
-***** Cosmos SDK(Golang)
-****** [[https://v1.cosmos.network/sdk Cosmos SDK:Golang - Cosmos Network]]
-****** [[https://docs.cosmos.network/ Cosmos SDK Documentation | Cosmos SDK]]
-****** [[https://github.com/cosmos/cosmos-sdk cosmos/cosmos-sdk: A Framework for Building High Value Public Blockchains]]
-***** Cosmos WASM(Rust)
-****** [[https://github.com/CosmWasm/cosmwasm CosmWasm/cosmwasm: Framework for building smart contracts in Wasm for the Cosmos SDK]]
+****** Cosmos SDK(Golang)
+******* [[https://v1.cosmos.network/sdk Cosmos SDK:Golang - Cosmos Network]]
+******* [[https://docs.cosmos.network/ Cosmos SDK Documentation | Cosmos SDK]]
+******* [[https://github.com/cosmos/cosmos-sdk cosmos/cosmos-sdk: A Framework for Building High Value Public Blockchains]]
+****** Cosmos WASM(Rust)
+******* [[https://github.com/CosmWasm/cosmwasm CosmWasm/cosmwasm: Framework for building smart contracts in Wasm for the Cosmos SDK]]
+*****:[[https://www.nervos.org/ Home | Nervos Network]]
+<code>
+The Nervos Network is a layered blockchain network for
+tomorrow’s crypto economy.
+
+CKB is the layer 1 of Nervos Network, a public permissionless blockchain.
+
+CKB uses Proof of Work and improved Nakamoto consensus to achieve maximized
+performance on average hardware and internet condition, without sacrificing
+decentralization and security which are the core value of blockchain.
+
+CKB supports scripting in any programming language with its own CKB-VM,
+a virtual machine fully compatible with RISC-V ISA. CKB is a General
+Verification Network, its programming model focuses on state verification,
+leaves state generation to layer 2 applications/protocols.
+
+The Nervos CKB mainnet launched in 2019. It’s processing thousands of
+transactions and keeping assets worth hundreds of millions secure every day.
+We are working hard to make it better, focusing mainly on two directions.
+1. The first is to optimize the Rust implementation, make it more secure,
+running more faster and more friendly to use.
+2. The second is to evolve the protocol to extend the system capabilities.
+
+If you love solving challenging problems, system programming, Rust, enjoy
+learning, want to make the world better with your talents, and believe in
+blockchain, please join us to invent the new internet of trust and value.
+
+</code>;
+****** [[https://github.com/nervosnetwork/ckb nervosnetwork/ckb: The Nervos CKB is a public permissionless blockchain, and the layer 1 of Nervos network.]]
+****** [[https://github.com/nervosnetwork/ckb-vm/ nervosnetwork/ckb-vm: CKB's vm, based on open source RISC-V ISA]]
+***:共识算法(Consensus)
+<code>
+常见于区块链领域，即达成共识的机制。在分布式系统中，
+依据系统对故障组件的容错能力分为崩溃容错协议(crash fault tolerant,CFT)
+和拜占庭容错协议（Byzantine fault tolerant,BFT)
+</code>;
+**** [[https://zh.m.wikipedia.org/wiki/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97 分布式计算 - 维基百科，自由的百科全书]]
+**** [[https://zh.m.wikipedia.org/wiki/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B0%86%E5%86%9B%E9%97%AE%E9%A2%98 拜占庭将军问题 - 维基百科，自由的百科全书]]
+***** [[https://archive.org/details/sim_acm-transactions-on-computer-systems_2002-11_20_4/page/398/mode/2up ACM Transactions on Computer Systems 2002-11: Vol 20 Iss 4 : Free Download, Borrow, and Streaming : Internet Archive]]
+**** [[https://zh.m.wikipedia.org/zh-hans/%E6%8C%81%E6%9C%89%E9%87%8F%E8%AD%89%E6%98%8E 持有量证明(PoS|Proof-of-Stake) - 维基百科，自由的百科全书]]
+**** [[https://zh.m.wikipedia.org/zh-hans/%E5%B7%A5%E4%BD%9C%E9%87%8F%E8%AD%89%E6%98%8E 工作量证明(PoW|Proof-of-Work) - 维基百科，自由的百科全书]]
+**** PoSpace|Proof-of-space
+***** [[https://zh.m.wikipedia.org/zh-hans/%E6%96%87%E4%BB%B6%E5%B8%81 文件币 - 维基百科，自由的百科全书]]
+**** DPoS: Delegated-Proof-of-Stake
+***** [[https://zh.m.wikipedia.org/zh-hans/EOS.IO EOS.IO - 维基百科，自由的百科全书]]
+**** [[https://zh.m.wikipedia.org/zh-hans/Paxos%E7%AE%97%E6%B3%95 Paxos算法 - 维基百科，自由的百科全书]]
+****:[[https://zh.m.wikipedia.org/zh-hans/Raft Raft - 维基百科，自由的百科全书]]
+<code>
+Raft是一种用于替代Paxos的共识算法。相比于Paxos，
+Raft的目标是提供更清晰的逻辑分工使得算法本身能被更好地理解，
+同时它安全性更高，并能提供一些额外的特性
+Raft能为在计算机集群之间部署有限状态机提供一种通用方法，
+并确保集群内的任意节点在某种状态转换上保持一致。
+Raft算法的开源实现众多，在Go、C++、Java以及Scala中都有
+完整的代码实现。
+Raft这一名字来源于"Reliable,Replicated,Redundant And Fault-Tolerant"（“可靠、可复制、可冗余、可容错”）的首字母缩写
+</code>;
 ** Dapp
 *** 学习资源
 ****:[[https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/README-CN.md Dapp-Learning]]

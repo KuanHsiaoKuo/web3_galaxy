@@ -33,6 +33,7 @@ def converter(puml_path: str):
                 has_child = False
                 node = {
                     "id": title_index,
+                    "layers": len(stars)
                     # "name": wrap_name,
                     # "size": len(name)
                     # "link": 'https://www.google.com'
@@ -69,10 +70,35 @@ def converter(puml_path: str):
                 node['name'] = wrap_name
                 json_results.append(node)
                 title_index += 1
+
+    write_tree_json(json_results)
+    write_bubble_json(json_results)
+
+
+def write_bubble_json(parse_results: list[dict]):
+    filename = f"{re.split('[/|.]', puml_path)[-2]}_bubble.json"
+    file_path = '../src/overview/vega/'
+    amount_start = 0.91
+    bubble_content = []
+    for item in parse_results:
+        node = {
+            "category": item['name'],
+            "amount": float('%.2f' % (amount_start - 0.03 * item['layers']))
+        }
+        if item.get('link'):
+            node['link'] = item['link']
+        if item.get('note'):
+            node['note'] = item['note']
+        bubble_content.append(node)
+    with open(f"{file_path}{filename}", 'w') as f:
+        f.write(json.dumps(bubble_content))
+
+
+def write_tree_json(parse_results: list[dict]):
     filename = f"{re.split('[/|.]', puml_path)[-2]}.json"
     file_path = '../src/overview/vega/'
     with open(f"{file_path}{filename}", 'w') as f:
-        f.write(json.dumps(json_results))
+        f.write(json.dumps(parse_results))
 
 
 def extract_stars_name_links_color(line=''):
@@ -95,7 +121,7 @@ def extract_stars_name_links_color(line=''):
             name = name.split(']')[1]
         if name.startswith(':'):  # 如果有注释
             name = name[1:]
-        if ': ' in name: # 如果是github这种在": "之后有说明的
+        if ': ' in name:  # 如果是github这种在": "之后有说明的
             name, title_note = name.split(': ', 1)
         else:
             title_note = None
