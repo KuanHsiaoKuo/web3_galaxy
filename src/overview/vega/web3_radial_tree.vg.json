@@ -3,7 +3,7 @@
   "description": "An example of a radial layout for a node-link diagram of hierarchical data.",
   "width": 2520,
   "height": 2520,
-  "padding": 5,
+  "padding": 100,
   "autosize": "none",
   "signals": [
     {

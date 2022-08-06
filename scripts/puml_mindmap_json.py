@@ -28,7 +28,8 @@ def converter(puml_path: str):
             # 标题的*后面只会出现三种情况：空格、:、[
             if line.startswith('*'):
                 stars, name, color, links, title_note = extract_stars_name_links_color(line)
-                levels[stars] = (line, title_index)
+                # 存放节点信息、节点id、节点多少子节点
+                levels[stars] = [line, title_index, 0]
                 parent = levels.get(stars[:-1])
                 has_child = False
                 node = {
@@ -41,6 +42,7 @@ def converter(puml_path: str):
                 if parent:
                     has_child = True
                     node["parent"] = parent[1]
+                    parent[2] = parent[2] + 1
                 if links:
                     # 如果是有链接，就变成子节点
                     link_count = 1
@@ -64,15 +66,71 @@ def converter(puml_path: str):
                     node["color"] = '#' + color
                 if index < len(lines) and lines[index + 1].startswith('<code>'):
                     note = notes.pop(0)
-                    print(f"弹出的注释：{note}")
+                    # print(f"弹出的注释：{note}")
                     node['note'] = f"{title_note}\n{note}" if title_note else note
                 wrap_name = get_wrap_name(name, has_child)
                 node['name'] = wrap_name
                 json_results.append(node)
                 title_index += 1
-
+    json_results = add_child_count(json_results)
+    json_results = add_node_count(json_results)
     write_tree_json(json_results)
     write_bubble_json(json_results)
+
+
+def add_child_count(parse_results: list[dict]):
+    """
+    添加子节点数量
+    :param parse_results:
+    :return:
+    """
+    children_count = {}
+    for node in parse_results:
+        if node.get('parent'):  # 根节点就不处理
+            children_count[node['parent']] = children_count.get(node['parent'], 0) + 1
+    # 再加上子节点数量
+    for node in parse_results:
+        node['child_count'] = children_count.get(node['id'], 0)
+    return parse_results
+
+
+def add_node_count(parse_results: list[dict]):
+    """
+    根据子节点数量child_count+1作为父节点名下节点的数量node_count
+    按层数从外到内缩小
+    :param parse_results:
+    :return:
+    """
+    layers_list = {}
+    max_layer = 1
+    for node in parse_results:
+        layer = node['layers']
+        if not layers_list.get(layer):
+            layers_list[layer] = []
+        layers_list[layer].append(node)
+        if layer > max_layer:
+            max_layer = layer
+    id_dict = {node['id']: node for node in parse_results}
+    while max_layer > 0:
+        layer_nodes = layers_list[max_layer]
+        for node in layer_nodes:
+            parent = id_dict.get(node.get('parent', None))
+            if parent:
+                parent['node_count'] = parent.get('node_count', 1) + node.get('node_count', 1)
+            if node.get('child_count') == 0:
+                node['node_count'] = 1
+            print(parent)
+        max_layer -= 1
+    parsed_results = []
+    for layer, nodes in layers_list.items():
+        parsed_results.extend(nodes)
+    # 最后统一计算所占角度
+    root = layers_list[1][0]
+    total_node_count = root['node_count']
+    node_angle = float('%.4f' % (360/total_node_count))
+    for node in parsed_results:
+        node['node_angle'] = node['node_count'] * node_angle
+    return parsed_results
 
 
 def write_bubble_json(parse_results: list[dict]):
@@ -113,20 +171,17 @@ def extract_stars_name_links_color(line=''):
         else:
             line = line.replace(f"[[{href} {title}]]", "")
         link_dict[title] = href
-    try:
-        stars = re.split('[ :\[]', line)[0]
-        name = line[len(stars):]
-        if name.startswith('[#'):  # 如果有颜色
-            color = re.findall('\[#(.*?)\]', name)[0]
-            name = name.split(']')[1]
-        if name.startswith(':'):  # 如果有注释
-            name = name[1:]
-        if ': ' in name:  # 如果是github这种在": "之后有说明的
-            name, title_note = name.split(': ', 1)
-        else:
-            title_note = None
-    except:
-        print(line)
+    stars = re.split('[ :\[]', line)[0]
+    name = line[len(stars):]
+    if name.startswith('[#'):  # 如果有颜色
+        color = re.findall('\[#(.*?)\]', name)[0]
+        name = name.split(']')[1]
+    if name.startswith(':'):  # 如果有注释
+        name = name[1:]
+    if ': ' in name:  # 如果是github这种在": "之后有说明的
+        name, title_note = name.split(': ', 1)
+    else:
+        title_note = None
     return stars, name, color, link_dict, title_note
 
 
