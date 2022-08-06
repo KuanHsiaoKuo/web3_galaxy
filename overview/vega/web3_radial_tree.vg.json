@@ -260,10 +260,14 @@
           "lineBreak": {
             "value": "\n"
           },
-          "href": {"signal": "datum.link"}
+          "href": {
+            "signal": "datum.link"
+          }
         },
         "hover": {
-          "tooltip": {"signal": "datum.link || datum.note ? datum : ''"}
+          "tooltip": {
+            "signal": "datum.link || datum.note ? datum : ''"
+          }
         }
       }
     }
