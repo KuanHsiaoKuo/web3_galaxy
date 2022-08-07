@@ -266,7 +266,7 @@
         },
         "hover": {
           "tooltip": {
-            "signal": "datum.link || datum.note ? datum : ''"
+            "signal": "datum.tool_tip"
           }
         }
       }

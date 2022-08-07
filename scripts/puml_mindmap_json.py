@@ -74,6 +74,7 @@ def converter(puml_path: str):
                 title_index += 1
     json_results = add_child_count(json_results)
     json_results = add_node_count(json_results)
+    json_results = add_tool_tip(json_results)
     return json_results
 
 
@@ -131,6 +132,19 @@ def add_node_count(parse_results: list[dict]):
     for node in parsed_results:
         node['node_angle'] = node['node_count'] * node_angle
     return parsed_results
+
+
+def add_tool_tip(parse_results: list[dict]):
+    optional_fileds = ['note', 'link']
+    for node in parse_results:
+        node['tool_tip'] = {
+            'title': node['name'],
+        }
+        for field in optional_fileds:
+            value = node.get(field)
+            if value:
+                node['tool_tip'][field] = value
+    return parse_results
 
 
 def write_bubble_json(parse_results: list[dict]):

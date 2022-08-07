@@ -159,8 +159,9 @@ learning, want to make the world better with your talents, and believe in
 blockchain, please join us to invent the new internet of trust and value.
 
 </code>;
-****** [[https://github.com/nervosnetwork/ckb nervosnetwork/ckb: The Nervos CKB is a public permissionless blockchain, and the layer 1 of Nervos network.]]
-****** [[https://github.com/nervosnetwork/ckb-vm/ nervosnetwork/ckb-vm: CKB's vm, based on open source RISC-V ISA]]
+****** [[https://github.com/nervosnetwork/ckb nervosnetwork/ckb(Rust): The Nervos CKB is a public permissionless blockchain, and the layer 1 of Nervos network.]]
+****** [[https://github.com/nervosnetwork/ckb-vm/ nervosnetwork/ckb-vm(Rust): CKB's vm, based on open source RISC-V ISA]]
+****** [[https://github.com/nervosnetwork/rfcs nervosnetwork/rfcs(Rust): This repository contains proposals, standards and documentations related to Nervos Network.]]
 ***:共识算法(Consensus)
 <code>
 常见于区块链领域，即达成共识的机制。在分布式系统中，
