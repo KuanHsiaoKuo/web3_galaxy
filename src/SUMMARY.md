@@ -4,3 +4,4 @@
     - [俯瞰角度3: tree](overview/web3_tree.html)
     - [俯瞰角度4: treemap](overview/web3_treemap.html)
     - [俯瞰角度5: 气泡图](overview/web3_bubble_chart.html)
+    - [俯瞰角度6: 知识图谱](overview/web3-force-directed-layout.html)

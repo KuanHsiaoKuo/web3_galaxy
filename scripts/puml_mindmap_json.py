@@ -74,8 +74,7 @@ def converter(puml_path: str):
                 title_index += 1
     json_results = add_child_count(json_results)
     json_results = add_node_count(json_results)
-    write_tree_json(json_results)
-    write_bubble_json(json_results)
+    return json_results
 
 
 def add_child_count(parse_results: list[dict]):
@@ -116,10 +115,11 @@ def add_node_count(parse_results: list[dict]):
         for node in layer_nodes:
             parent = id_dict.get(node.get('parent', None))
             if parent:
-                parent['node_count'] = parent.get('node_count', 1) + node.get('node_count', 1)
+                # parent['node_count'] = parent.get('node_count', 1) + node.get('node_count', 1)
+                parent['node_count'] = parent.get('node_count', 0) + node.get('node_count', 1)
+                print(parent)
             if node.get('child_count') == 0:
                 node['node_count'] = 1
-            print(parent)
         max_layer -= 1
     parsed_results = []
     for layer, nodes in layers_list.items():
@@ -127,7 +127,7 @@ def add_node_count(parse_results: list[dict]):
     # 最后统一计算所占角度
     root = layers_list[1][0]
     total_node_count = root['node_count']
-    node_angle = float('%.4f' % (360/total_node_count))
+    node_angle = float('%.4f' % (360 / total_node_count))
     for node in parsed_results:
         node['node_angle'] = node['node_count'] * node_angle
     return parsed_results
@@ -150,6 +150,23 @@ def write_bubble_json(parse_results: list[dict]):
         bubble_content.append(node)
     with open(f"{file_path}{filename}", 'w') as f:
         f.write(json.dumps(bubble_content))
+
+
+def write_knowledge_graph_json(parse_results: list[dict]):
+    filename = f"{re.split('[/|.]', puml_path)[-2]}_knowledge_graph.json"
+    file_path = '../src/overview/vega/'
+    # knowledge_graph_nodes = parse_results
+    knowledge_graph_links = []
+    knowledge_graph_nodes = []
+    for node in parse_results:
+        if node.get('parent'):
+            link = {'source': node['id'], 'target': node['parent'], 'value': 1}
+            knowledge_graph_links.append(link)
+        node['index'] = node['id']
+        knowledge_graph_nodes.append(node)
+    knowledge_graph = {'nodes': knowledge_graph_nodes, 'links': knowledge_graph_links}
+    with open(f"{file_path}{filename}", 'w') as f:
+        f.write(json.dumps(knowledge_graph))
 
 
 def write_tree_json(parse_results: list[dict]):
@@ -250,4 +267,7 @@ if __name__ == "__main__":
         puml_path = sys.argv[1]
         if not puml_path.endswith('.puml'):
             print("请传入puml文件...")
-    converter(puml_path)
+    converted_results = converter(puml_path)
+    write_tree_json(converted_results)
+    write_bubble_json(converted_results)
+    write_knowledge_graph_json(converted_results)
