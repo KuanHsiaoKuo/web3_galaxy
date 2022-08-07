@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "An example of a space-fulling radial layout for hierarchical data.",
-  "width": 1200,
-  "height": 1200,
-  "padding": 200,
+  "width": 600,
+  "height": 600,
+  "padding": 20,
   "autosize": "none",
   "data": [
     {
@@ -73,7 +73,7 @@
             "field": "depth"
           },
           "tooltip": {
-            "signal": "datum.node_angle + ' ' + datum.name + (datum.link ? ' 🔗 ' : '') + '包含 ' + (datum.node_count ? ', ' + datum.node_count + ' 个节点' : '')"
+            "signal": "{'基本信息': datum.node_angle + ' ' + datum.name + (datum.link ? ' 🔗 ' : '') + '包含 ' + (datum.node_count ? ', ' + datum.node_count + ' 个节点' : '')}"
           },
           "href": {
             "signal": "datum.link"
