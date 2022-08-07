@@ -126,11 +126,11 @@ def add_node_count(parse_results: list[dict]):
     for layer, nodes in layers_list.items():
         parsed_results.extend(nodes)
     # 最后统一计算所占角度
-    root = layers_list[1][0]
-    total_node_count = root['node_count']
-    node_angle = float('%.4f' % (360 / total_node_count))
-    for node in parsed_results:
-        node['node_angle'] = node['node_count'] * node_angle
+    # root = layers_list[1][0]
+    # total_node_count = root['node_count']
+    # node_angle = float('%.4f' % (360 / total_node_count))
+    # for node in parsed_results:
+    #     node['node_angle'] = node['node_count'] * node_angle
     return parsed_results
 
 
