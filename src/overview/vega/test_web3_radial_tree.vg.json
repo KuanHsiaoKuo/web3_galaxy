@@ -118,6 +118,7 @@
   "data": [
     {
       "name": "tree",
+      //      "url": " https://kuanhsiaokuo.github.io/web3_galaxy/overview/vega/web3_galaxy.json",
       "url": "vega/web3_galaxy.json",
       "transform": [
         {
@@ -190,7 +191,7 @@
         }
       ]
     },
-    {
+    { // active更新后会刷新
       "name": "selected",
       "source": "tree",
       "transform": [
@@ -201,7 +202,7 @@
       ]
     },
     {
-      "name": "unrevlant",
+      "name": "unrevelant",
       "source": "tree",
       "transform": [
         {
@@ -246,13 +247,16 @@
             "value": "#ccc"
           },
           "update": {
+            // "fill": {
+            //   "value": "steelblue"
+            // }
             "stroke": [
               {
                 "test": "parent.id === active",
                 "signal": "colorOut"
               },
               {
-                "test": "parent.parent === active",
+                "test": "parent.target === active",
                 "signal": "colorIn"
               },
               {
@@ -316,7 +320,7 @@
           "fontSize": {
             "value": 9
           },
-          "fill": {
+          "fill":{
             "value": "black"
           }
         },
@@ -353,43 +357,52 @@
               "test": "datum.id === active",
               "value": "green"
             },
-            {
+            {// 第一层子节点
               "test": "indata('selected', 'parent', datum.parent)",
+              //"signal": "colorIn"
               "value": "steelblue"
             },
-            {
+            // {
+            //   "test": "!indata('selected', 'parent', datum.parent)",
+            //   "value": "red"
+            // },
+            {// 第二层子子节点
               "test": "indata('selected', 'id', datum.parent)",
+              // "signal": "colorOut"
               "value": "red"
+            },
+            {// 无关节点
+              "test": "!indata('selected', 'id', datum.parent) && datum.id != active && !indata('selected', 'id', datum.parent)",
+              "value": "black"
             },
             {
               "value": "black"
             }
           ],
-          "fontSize": [
-            {
-              "test": "datum.id === active",
-              "value": 30
-            },
+          "fontSize":[
             {
               "test": "indata('selected', 'parent', datum.parent)",
               "value": 24
-            },
-            {
-              "test": "indata('selected', 'id', datum.parent)",
-              "value": 14
-            },
-            {
-              "value": 5
             }
           ]
         },
         "hover": {
-          "tooltip": {
-            "signal": "datum.tool_tip"
-          },
+          // "tooltip": {
+          //   "signal": "datum"
+          // },
+          // "tooltip":{
+          //     "signal": "data('unrevelant')"
+          // },
           "fontSize": {
             "value": 34
-          }
+          },
+          // "fill": [
+          //   {// 第一层子节点
+          //     "test": "!indata('selected', 'parent', datum.parent)",
+          //     //"signal": "colorIn"
+          //     "value": "white"
+          //   }
+          // ]
         }
       }
     }

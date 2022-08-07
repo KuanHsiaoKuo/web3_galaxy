@@ -32,6 +32,7 @@ def converter(puml_path: str):
                 levels[stars] = [line, title_index, 0]
                 parent = levels.get(stars[:-1])
                 has_child = False
+                print('title_index:', title_index)
                 node = {
                     "id": title_index,
                     "layers": len(stars)
@@ -39,6 +40,7 @@ def converter(puml_path: str):
                     # "size": len(name)
                     # "link": 'https://www.google.com'
                 }
+                title_index += 1
                 if parent:
                     has_child = True
                     node["parent"] = parent[1]
@@ -47,12 +49,12 @@ def converter(puml_path: str):
                     # 如果是有链接，就变成子节点
                     link_count = 1
                     for link_name, link in links.items():
-                        title_index += 1
                         if link_count == 1:
                             node['link'] = link
                         if link_count > 1:  # 多于一个链接才作为子节点
                             has_child = False
                             wrap_link_name = get_wrap_name(f"链接{link_count}: {link_name}", has_child)
+                            print('title_index:', title_index)
                             child_node = {
                                 "id": title_index,
                                 "name": wrap_link_name,
@@ -60,6 +62,7 @@ def converter(puml_path: str):
                                 "parent": node['id'],
                                 "note": f'来自{node["name"]}的链接'
                             }
+                            title_index += 1
                             json_results.append(child_node)
                             link_count += 1
                 if color:
@@ -71,7 +74,6 @@ def converter(puml_path: str):
                 wrap_name = get_wrap_name(name, has_child)
                 node['name'] = wrap_name
                 json_results.append(node)
-                title_index += 1
     json_results = add_child_count(json_results)
     json_results = add_node_count(json_results)
     json_results = add_tool_tip(json_results)
