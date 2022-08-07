@@ -262,6 +262,9 @@
           },
           "href": {
             "signal": "datum.link"
+          },
+          "cursor": {
+            "value": "pointer"
           }
         },
         "hover": {
