@@ -5,7 +5,7 @@
   "autosize": "none",
   "signals": [
     {
-      "name": "width",
+      "name": "square",
       "value": 1530,
       "bind": {
         "input": "range",
@@ -15,14 +15,12 @@
       }
     },
     {
+      "name": "width",
+      "update": "square"
+    },
+    {
       "name": "height",
-      "value": 1200,
-      "bind": {
-        "input": "range",
-        "min": 20,
-        "max": 3000,
-        "step": 10
-      }
+      "update": "square"
     },
     {
       "name": "labels",
@@ -33,12 +31,7 @@
     },
     {
       "name": "radius",
-      "value": 600,
-      "bind": {
-        "input": "range",
-        "min": 20,
-        "max": 1600
-      }
+      "update": "square / 3"
     },
     {
       "name": "extent",
@@ -62,7 +55,7 @@
     },
     {
       "name": "layout",
-      "value": "cluster",
+      "value": "tidy",
       "bind": {
         "input": "radio",
         "options": [
@@ -323,24 +316,8 @@
           },
           "size": [
             {
-              "test": "datum.id === active",
-              "value": 400
-            },
-            {
-              "test": "indata('selected_child', 'parent', datum.parent)",
-              "value": 300
-            },
-            {
-              "test": "indata('selected_child', 'id', datum.parent)",
-              "value": 200
-            },
-            {
-              "test": "indata('selected_bro', 'id', datum.id)",
-              "value": 100
-            },
-            {
               "test": "active ? !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent) && datum.id != active && datum.id != active_parent : datum.id === null",
-              "value": 0
+              "value": 10
             },
             {
               "value": 100
@@ -369,7 +346,7 @@
             "value": "middle"
           },
           "fontSize": {
-            "value": 9
+            "value": 12
           },
           "fill": {
             "value": "black"
@@ -403,6 +380,15 @@
           "cursor": {
             "value": "pointer"
           },
+          "fontSize": [
+            {
+              "test": "active ? !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent) && datum.id != active && datum.id != active_parent : datum.id === null",
+              "value": 0
+            },
+            {
+              "value": 10
+            }
+          ],
           "fill": [
             {
               "test": "datum.id === active",
@@ -421,45 +407,13 @@
               "value": "gold"
             },
             {
-              "test": "active ? !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent) && datum.id != active && datum.id != active_parent : datum.id === null",
-              "value": "white"
-            },
-            {
               "value": "black"
-            }
-          ],
-          "fontSize": [
-            {
-              "test": "datum.id === active_parent",
-              "value": 30
-            },
-            {
-              "test": "datum.id === active",
-              "value": 25
-            },
-            {
-              "test": "indata('selected_bro', 'id', datum.id)",
-              "value": 25
-            },
-            {
-              "test": "indata('selected_child', 'parent', datum.parent)",
-              "value": 20
-            },
-            {
-              "test": "indata('selected_child', 'id', datum.parent)",
-              "value": 20
-            },
-            {
-              "value": 5
             }
           ]
         },
         "hover": {
           "tooltip": {
             "signal": "datum.tool_tip"
-          },
-          "fontSize": {
-            "value": 34
           }
         }
       }
