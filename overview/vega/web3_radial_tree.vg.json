@@ -6,7 +6,7 @@
   "signals": [
     {
       "name": "width",
-      "value": 600,
+      "value": 1530,
       "bind": {
         "input": "range",
         "min": 20,
@@ -16,7 +16,7 @@
     },
     {
       "name": "height",
-      "value": 600,
+      "value": 1200,
       "bind": {
         "input": "range",
         "min": 20,
@@ -33,7 +33,7 @@
     },
     {
       "name": "radius",
-      "value": 200,
+      "value": 600,
       "bind": {
         "input": "range",
         "min": 20,
@@ -205,7 +205,7 @@
       ]
     },
     {
-      "name": "selected",
+      "name": "selected_child",
       "source": "tree",
       "transform": [
         {
@@ -215,12 +215,22 @@
       ]
     },
     {
+      "name": "selected_bro",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.parent === active_parent"
+        }
+      ]
+    },
+    {
       "name": "unrevlant",
       "source": "tree",
       "transform": [
         {
           "type": "filter",
-          "expr": "datum.id != active && !indata('selected', 'parent', datum.parent) && !indata('selected', 'id', datum.parent)"
+          "expr": "datum.id != active && !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent)"
         }
       ]
     }
@@ -310,7 +320,38 @@
           "fill": {
             "scale": "color",
             "field": "depth"
-          }
+          },
+          "size": [
+            {
+              "test": "datum.id === active",
+              "value": 400
+            },
+            {
+              "test": "indata('selected_child', 'parent', datum.parent)",
+              "value": 300
+            },
+            {
+              "test": "indata('selected_child', 'id', datum.parent)",
+              "value": 200
+            },
+            {
+              "test": "indata('selected_bro', 'id', datum.id)",
+              "value": 100
+            },
+            {
+              "test": "active ? !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent) && datum.id != active && datum.id != active_parent : datum.id === null",
+              "value": 0
+            },
+            {
+              "value": 100
+            }
+          ],
+          "stroke": [
+            {
+              "test": "datum.id === active",
+              "value": "red"
+            }
+          ]
         }
       }
     },
@@ -368,15 +409,19 @@
               "value": "green"
             },
             {
-              "test": "indata('selected', 'parent', datum.parent)",
+              "test": "indata('selected_child', 'parent', datum.parent)",
               "value": "steelblue"
             },
             {
-              "test": "indata('selected', 'id', datum.parent)",
+              "test": "indata('selected_child', 'id', datum.parent)",
               "value": "red"
             },
             {
-              "test": "active ? !indata('selected', 'parent', datum.parent) && !indata('selected', 'id', datum.parent) && datum.id != active : datum.id === null",
+              "test": "indata('selected_bro', 'id', datum.id)",
+              "value": "gold"
+            },
+            {
+              "test": "active ? !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent) && datum.id != active && datum.id != active_parent : datum.id === null",
               "value": "white"
             },
             {
@@ -385,20 +430,24 @@
           ],
           "fontSize": [
             {
-              "test": "datum.id === active",
+              "test": "datum.id === active_parent",
               "value": 30
             },
             {
-              "test": "datum.id === active_parent",
-              "value": "red"
+              "test": "datum.id === active",
+              "value": 25
             },
             {
-              "test": "indata('selected', 'parent', datum.parent)",
-              "value": 24
+              "test": "indata('selected_bro', 'id', datum.id)",
+              "value": 25
             },
             {
-              "test": "indata('selected', 'id', datum.parent)",
-              "value": 14
+              "test": "indata('selected_child', 'parent', datum.parent)",
+              "value": 20
+            },
+            {
+              "test": "indata('selected_child', 'id', datum.parent)",
+              "value": 20
             },
             {
               "value": 5
