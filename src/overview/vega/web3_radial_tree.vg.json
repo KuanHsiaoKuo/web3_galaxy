@@ -113,6 +113,20 @@
           "update": "null"
         }
       ]
+    },
+    {
+      "name": "active_parent",
+      "value": null,
+      "on": [
+        {
+          "events": "text:mouseover",
+          "update": "datum.parent"
+        },
+        {
+          "events": "mouseover[!event.item]",
+          "update": "null"
+        }
+      ]
     }
   ],
   "data": [
@@ -362,6 +376,10 @@
               "value": "red"
             },
             {
+              "test": "active ? !indata('selected', 'parent', datum.parent) && !indata('selected', 'id', datum.parent) && datum.id != active : datum.id === null",
+              "value": "white"
+            },
+            {
               "value": "black"
             }
           ],
@@ -369,6 +387,10 @@
             {
               "test": "datum.id === active",
               "value": 30
+            },
+            {
+              "test": "datum.id === active_parent",
+              "value": "red"
             },
             {
               "test": "indata('selected', 'parent', datum.parent)",
