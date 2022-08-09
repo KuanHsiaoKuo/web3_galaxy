@@ -31,7 +31,7 @@
     },
     {
       "name": "radius",
-      "update": "square / 3"
+      "update": "square / 2"
     },
     {
       "name": "extent",

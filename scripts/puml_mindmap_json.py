@@ -234,9 +234,11 @@ def get_wrap_name(name, has_child):
         for char in name:
             if char == ' ':
                 space_count += 1
-            if space_count == 3:
+            if space_count == 2:
                 char = '\n'
                 space_count = 0
+            if char in ('/', '-'):
+                char += '\n'
             wrap_name.append(char)
         return ''.join(wrap_name)
     else:
