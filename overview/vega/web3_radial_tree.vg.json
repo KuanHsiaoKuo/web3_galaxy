@@ -252,6 +252,21 @@
       "zero": true
     }
   ],
+  "legends": [
+    {
+      "fill": "color",
+      "title": "Relative",
+      "offset": 0,
+      "encode": {
+        "symbols": {
+          "update": {
+            "fillOpacity": {"value": 1},
+            "stroke": {"value": "transparent"}
+          }
+        }
+      }
+    }
+  ],
   "marks": [
     {
       "type": "path",
