@@ -94,6 +94,20 @@
       "value": "forestgreen"
     },
     {
+      "name": "hover_tool_tip",
+      "value": 0,
+      "on": [
+        {
+          "events": "text:mouseover[event.shiftKey]",
+          "update": "1"
+        },
+        {
+          "events": "mouseover[!event.item]",
+          "update": "0"
+        }
+      ]
+    },
+    {
       "name": "active",
       "value": null,
       "on": [
@@ -260,8 +274,12 @@
       "encode": {
         "symbols": {
           "update": {
-            "fillOpacity": {"value": 1},
-            "stroke": {"value": "transparent"}
+            "fillOpacity": {
+              "value": 1
+            },
+            "stroke": {
+              "value": "transparent"
+            }
           }
         }
       }
@@ -405,7 +423,7 @@
               "value": 0
             },
             {
-              "value": 12
+              "value": 9
             }
           ],
           "fill": [
@@ -432,7 +450,7 @@
         },
         "hover": {
           "tooltip": {
-            "signal": "datum.tool_tip"
+            "signal": "hover_tool_tip === 1 ? datum.tool_tip : null"
           }
         }
       }
