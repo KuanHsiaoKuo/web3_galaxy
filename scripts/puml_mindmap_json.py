@@ -31,18 +31,15 @@ def converter(puml_path: str):
                 # 存放节点信息、节点id、节点多少子节点
                 levels[stars] = [line, title_index, 0]
                 parent = levels.get(stars[:-1])
-                has_child = False
-                print('title_index:', title_index)
                 node = {
                     "id": title_index,
-                    "layers": len(stars)
-                    # "name": wrap_name,
+                    "layers": len(stars),
+                    "name": name,
                     # "size": len(name)
                     # "link": 'https://www.google.com'
                 }
                 title_index += 1
                 if parent:
-                    has_child = True
                     node["parent"] = parent[1]
                     parent[2] = parent[2] + 1
                 if links:
@@ -52,12 +49,9 @@ def converter(puml_path: str):
                         if link_count == 1:
                             node['link'] = link
                         if link_count > 1:  # 多于一个链接才作为子节点
-                            has_child = False
-                            wrap_link_name = get_wrap_name(f"链接{link_count}: {link_name}", has_child)
-                            print('title_index:', title_index)
                             child_node = {
                                 "id": title_index,
-                                "name": wrap_link_name,
+                                "name": f"链接{link_count}: {link_name}",
                                 "link": link,
                                 "parent": node['id'],
                                 "note": f'来自{node["name"]}的链接'
@@ -69,10 +63,7 @@ def converter(puml_path: str):
                     node["color"] = '#' + color
                 if index < len(lines) and lines[index + 1].startswith('<code>'):
                     note = notes.pop(0)
-                    # print(f"弹出的注释：{note}")
                     node['note'] = f"{title_note}\n{note}" if title_note else note
-                wrap_name = get_wrap_name(name, has_child)
-                node['name'] = wrap_name
                 json_results.append(node)
     json_results = add_child_count(json_results)
     json_results = add_node_count(json_results)
@@ -82,7 +73,7 @@ def converter(puml_path: str):
 
 def add_child_count(parse_results: list[dict]):
     """
-    添加子节点数量
+    添加子节点数量, 根据子节点数量控制标题换行
     :param parse_results:
     :return:
     """
@@ -93,6 +84,8 @@ def add_child_count(parse_results: list[dict]):
     # 再加上子节点数量
     for node in parse_results:
         node['child_count'] = children_count.get(node['id'], 0)
+        if node['child_count'] == 0:
+            node['name'] = get_wrap_name(node['name'])
     return parse_results
 
 
@@ -120,7 +113,6 @@ def add_node_count(parse_results: list[dict]):
             if parent:
                 # parent['node_count'] = parent.get('node_count', 1) + node.get('node_count', 1)
                 parent['node_count'] = parent.get('node_count', 0) + node.get('node_count', 1)
-                print(parent)
             if node.get('child_count') == 0:
                 node['node_count'] = 1
         max_layer -= 1
@@ -218,31 +210,30 @@ def extract_stars_name_links_color(line=''):
     return stars, name, color, link_dict, title_note
 
 
-def get_wrap_name(name, has_child):
+def get_wrap_name(name):
     """
     根据是否有子节点选择是否换行
     1. 有子节点，选择换行
     2. 没有子节点，不需要换行，否则文字会重叠
     :param name:
-    :param has_child:
     :return:
     """
     # 统一添加换行符
-    if not has_child:
-        wrap_name = []
-        space_count = 0
-        for char in name:
-            if char == ' ':
-                space_count += 1
-            if space_count == 2:
-                char = '\n'
-                space_count = 0
-            if char in ('/', '-'):
-                char += '\n'
-            wrap_name.append(char)
-        return ''.join(wrap_name)
-    else:
-        return name
+    name = name.strip().replace('  ', ' ')
+    wrap_name_list = [char for char in name]
+    space_count = 0
+    symbols = ['/', '-']
+    for index, char in enumerate(wrap_name_list):
+        if char == ' ':
+            space_count += 1
+        if space_count == 2:
+            wrap_name_list[index] = '\n'
+            space_count = 0
+        if char in symbols:
+            wrap_name_list[index] += '\n'
+    wrap_name = ''.join(wrap_name_list).strip()
+    print(wrap_name)
+    return wrap_name
 
 
 def extract_notes(text=''):
