@@ -6,11 +6,21 @@
   "signals": [
     {
       "name": "square",
-      "value": 1530,
+      "value": 2400,
       "bind": {
         "input": "range",
         "min": 20,
         "max": 3000,
+        "step": 10
+      }
+    },
+    {
+      "name": "radius",
+      "update": "square * 0.4",
+      "bind": {
+        "input": "range",
+        "min": 20,
+        "max": 2000,
         "step": 10
       }
     },
@@ -28,10 +38,6 @@
       "bind": {
         "input": "checkbox"
       }
-    },
-    {
-      "name": "radius",
-      "update": "square / 2"
     },
     {
       "name": "extent",
