@@ -198,16 +198,6 @@
       ]
     },
     {
-      "name": "selected_child",
-      "source": "tree",
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "datum.parent === active"
-        }
-      ]
-    },
-    {
       "name": "selected_bro",
       "source": "tree",
       "transform": [
@@ -218,12 +208,32 @@
       ]
     },
     {
+      "name": "selected_child",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.parent === active"
+        }
+      ]
+    },
+    {
+      "name": "selected_grandson",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "indata('selected_child', 'id', datum.parent)"
+        }
+      ]
+    },
+    {
       "name": "unrevlant",
       "source": "tree",
       "transform": [
         {
           "type": "filter",
-          "expr": "datum.id != active && !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent)"
+          "expr": "active ? datum.id != active && datum.id != active_parent && !indata('selected_child', 'id', datum.id) && !indata('selected_bro', 'id', datum.id) && !indata('selected_grandson', 'id', datum.id) : datum.id === null"
         }
       ]
     }
@@ -316,7 +326,7 @@
           },
           "size": [
             {
-              "test": "active ? !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent) && datum.id != active && datum.id != active_parent : datum.id === null",
+              "test": "indata('unrevlant', 'id', datum.id)",
               "value": 10
             },
             {
@@ -344,12 +354,6 @@
           },
           "baseline": {
             "value": "middle"
-          },
-          "fontSize": {
-            "value": 12
-          },
-          "fill": {
-            "value": "black"
           }
         },
         "update": {
@@ -382,29 +386,29 @@
           },
           "fontSize": [
             {
-              "test": "active ? !indata('selected_child', 'parent', datum.parent) && !indata('selected_child', 'id', datum.parent) && datum.id != active && datum.id != active_parent : datum.id === null",
+              "test": "indata('unrevlant', 'id', datum.id)",
               "value": 0
             },
             {
-              "value": 10
+              "value": 12
             }
           ],
           "fill": [
+            {
+              "test": "datum.id === active_parent",
+              "value": "gold"
+            },
             {
               "test": "datum.id === active",
               "value": "green"
             },
             {
-              "test": "indata('selected_child', 'parent', datum.parent)",
-              "value": "steelblue"
-            },
-            {
-              "test": "indata('selected_child', 'id', datum.parent)",
-              "value": "red"
-            },
-            {
               "test": "indata('selected_bro', 'id', datum.id)",
-              "value": "gold"
+              "value": "purple"
+            },
+            {
+              "test": "indata('selected_child', 'id', datum.id)",
+              "value": "steelblue"
             },
             {
               "value": "black"
