@@ -84,8 +84,7 @@ def add_child_count(parse_results: list[dict]):
     # 再加上子节点数量
     for node in parse_results:
         node['child_count'] = children_count.get(node['id'], 0)
-        if node['child_count'] == 0:
-            node['name'] = get_wrap_name(node['name'])
+        node['name'] = get_wrap_name(node['name'], node['child_count'])
     return parse_results
 
 
@@ -210,29 +209,36 @@ def extract_stars_name_links_color(line=''):
     return stars, name, color, link_dict, title_note
 
 
-def get_wrap_name(name):
+def get_wrap_name(name, child_count):
     """
-    根据是否有子节点选择是否换行
-    1. 有子节点，选择换行
-    2. 没有子节点，不需要换行，否则文字会重叠
+    根据子节点个数来确定换行,避免文字重叠
+    一般来说，父节点行数 = 子节点个数 - 1
     :param name:
+    :param child_count:
     :return:
     """
     # 统一添加换行符
     name = name.strip().replace('  ', ' ')
     wrap_name_list = [char for char in name]
-    space_count = 0
-    symbols = ['/', '-']
+    # space_count = 0
+    wrap_count = 0
+    # symbols = ['/', '-']
     for index, char in enumerate(wrap_name_list):
-        if char == ' ':
-            space_count += 1
-        if space_count == 2:
-            wrap_name_list[index] = '\n'
-            space_count = 0
-        if char in symbols:
+        # if char == ' ':
+        #    space_count += 1
+        # if space_count == 2:
+        #    if wrap_count < child_count:
+        #        wrap_name_list[index] = '\n'
+        #        wrap_count += 1
+        #    space_count = 0
+        # if char in symbols:
+        #    wrap_name_list[index] += '\n'
+        if index > 0 and index % 12 == 0 and wrap_count < child_count - 1:
+            wrap_count += 1
             wrap_name_list[index] += '\n'
     wrap_name = ''.join(wrap_name_list).strip()
-    print(wrap_name)
+    if child_count:
+        print(child_count, wrap_name_list)
     return wrap_name
 
 
