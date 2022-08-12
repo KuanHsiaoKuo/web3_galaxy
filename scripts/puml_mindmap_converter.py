@@ -27,7 +27,7 @@ def converter(puml_path: str):
         for index, line in enumerate(lines):
             # 标题的*后面只会出现三种情况：空格、:、[
             if line.startswith('*'):
-                stars, name, color, links, title_note = extract_stars_name_links_color(line)
+                stars, name, color, links = extract_stars_name_links_color(line)
                 # 存放节点信息、节点id、节点多少子节点
                 levels[stars] = [line, title_index, 0]
                 parent = levels.get(stars[:-1])
@@ -45,7 +45,8 @@ def converter(puml_path: str):
                 if links:
                     # 如果是有链接，就变成子节点
                     link_count = 1
-                    for link_name, link in links.items():
+                    for link_name, link_detail in links.items():
+                        link, title_note = link_detail
                         if link_count == 1:
                             node['link'] = link
                         if link_count > 1:  # 多于一个链接才作为子节点
@@ -185,16 +186,18 @@ def write_tree_json(parse_results: list[dict]):
 
 def extract_stars_name_links_color(line=''):
     color = None
-    links = re.findall('\[\[(.*?)\]\]', line)
+    links = extract_links(line)
     link_dict = {}
-    for index, link in enumerate(links):
-        href, title = link.split(' ', 1)
+    for index, link_detail in enumerate(links):
+        href, raw_title, url_title = link_detail['link'], link_detail['raw_title'], link_detail['url_title']
+        title_choices = [item for item in [raw_title, url_title, link_detail['real_title']] if item]
+        short_title = min(title_choices, key=len)
         # 除了第一个链接，其他都作为子链接
         if index == 0:
-            line = line.replace(f"[[{href} {title}]]", f' {title}')
+            line = line.replace(f"[[{href} {raw_title}]]", f' {short_title}')
         else:
-            line = line.replace(f"[[{href} {title}]]", "")
-        link_dict[title] = href
+            line = line.replace(f"[[{href} {short_title}]]", "")
+        link_dict[short_title] = [href, link_detail['title_note']]
     stars = re.split('[ :\[]', line)[0]
     name = line[len(stars):]
     if name.startswith('[#'):  # 如果有颜色
@@ -202,11 +205,7 @@ def extract_stars_name_links_color(line=''):
         name = name.split(']')[1]
     if name.startswith(':'):  # 如果有注释
         name = name[1:]
-    if ': ' in name:  # 如果是github这种在": "之后有说明的
-        name, title_note = name.split(': ', 1)
-    else:
-        title_note = None
-    return stars, name, color, link_dict, title_note
+    return stars, name, color, link_dict
 
 
 def get_wrap_name(name, child_count):
@@ -237,8 +236,6 @@ def get_wrap_name(name, child_count):
             wrap_count += 1
             wrap_name_list[index] += '\n'
     wrap_name = ''.join(wrap_name_list).strip()
-    if child_count:
-        print(child_count, wrap_name_list)
     return wrap_name
 
 
@@ -266,13 +263,71 @@ def extract_notes(text=''):
     return notes
 
 
+def replace_process(raw_title: str):
+    replace_list = [
+        ('- 维基百科，自由的百科全书', '[🔗wiki]')
+    ]
+    for pre, after in replace_list:
+        raw_title = raw_title.replace(pre, after)
+    return raw_title
+
+
 def extract_links(text=''):
     links = re.findall('\[\[(.*?)\]\]', text)
-    link_dict = {}
+    link_list = []
     for link in links:
         href, title = link.split(' ', 1)
-        link_dict[title] = href
-    return link_dict
+        if 'https://github.com' in href:
+            url_title = '/'.join(href.split('/')[-2:])
+            if ': ' in title:
+                real_title, title_note = title.split(': ', 1)
+            else:
+                real_title, title_note = title, None
+            link_dict = {
+                'url_title': url_title,
+                'link': href,
+                'real_title': real_title,
+                'raw_title': title,
+                'title_note': title_note
+            }
+        else:
+            # url_title = href.split('/')[-1]
+            url_title = ''
+            link_dict = {
+                'url_title': url_title,
+                'link': href,
+                'real_title': title,
+                'raw_title': title,
+                'title_note': None
+            }
+        real_title = replace_process(title)
+        link_dict['real_title'] = real_title
+        link_list.append(link_dict)
+    return link_list
+
+
+# 对标题内容进行预处理
+def preprocess_title(puml_path: str):
+    with open(puml_path, 'r') as f:
+        lines = [line for line in f.readlines()]
+
+    for line in lines:
+        links = re.findall('\[\[(.*?)\]\]', line)
+        for link in links:
+            if 'https://github.com' in link:
+                github_link, default_title = link.split(' ', 1)
+                short_title = '/'.join(github_link.split('/')[-2:])
+                if ': ' in default_title:
+                    real_title, title_note = default_title.split(': ', 1)
+                else:
+                    real_title, title_note = default_title, None
+                link_dict = {
+                    'github_link': github_link,
+                    'short_title': short_title,
+                    'real_title': real_title,
+                    'title_note': title_note
+                }
+                print(link_dict)
 
 
 if __name__ == "__main__":
@@ -286,3 +341,4 @@ if __name__ == "__main__":
     write_tree_json(converted_results)
     write_bubble_json(converted_results)
     write_knowledge_graph_json(converted_results)
+    # preprocess_title(puml_path)

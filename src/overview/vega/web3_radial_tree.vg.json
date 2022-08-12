@@ -40,6 +40,16 @@
       }
     },
     {
+      "name": "textOffset",
+      "value": 8,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 20,
+        "step": 1
+      }
+    },
+    {
       "name": "extent",
       "value": 360,
       "bind": {
@@ -345,9 +355,6 @@
       },
       "encode": {
         "enter": {
-          "size": {
-            "value": 100
-          },
           "stroke": {
             "value": "#fff"
           }
@@ -367,6 +374,10 @@
             {
               "test": "indata('unrevlant', 'id', datum.id)",
               "value": 10
+            },
+            {
+              "test": "datum.child_count > 1",
+              "signal": "60 * datum.child_count"
             },
             {
               "value": 100
@@ -402,9 +413,16 @@
           "y": {
             "field": "y"
           },
-          "dx": {
-            "signal": "(datum.leftside ? -1 : 1) * 6"
+          "dx": [
+            {
+              "test": "datum.child_count === 0",
+              "signal": "(datum.leftside ? -1 : 1) * textOffset"
           },
+            {
+              "test": "datum.child_count > 0",
+              "signal": "(datum.leftside ? -1 : 1) * (textOffset + datum.child_count * 2)"
+            }
+          ],
           "angle": {
             "signal": "datum.leftside ? datum.angle - 180 : datum.angle"
           },
