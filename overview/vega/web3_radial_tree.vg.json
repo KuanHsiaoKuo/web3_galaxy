@@ -61,7 +61,7 @@
     },
     {
       "name": "rotate",
-      "value": 0,
+      "value": 90,
       "bind": {
         "input": "range",
         "min": 0,
